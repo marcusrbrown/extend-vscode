@@ -12,5 +12,5 @@ indent_size = 2
 indent_style = space
 trim_trailing_whitespace = true
 
-[*.ts]
+[.vscode/*.json]
 indent_size = 4
