@@ -1,26 +1,29 @@
 {
-  "name": "vscode-bashio",
-  "displayName": "vscode-bashio",
-  "description": "Completion provider for Bashio",
+  "name": "vscode-bash",
+  "displayName": "Bash",
+  "description": "Full language support for the Bourne Again SHell (Bash)",
   "version": "0.1.0",
+  "author": "Marcus R. Brown <me@igetgam.es>",
+  "publisher": "igetgames",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/igetgames/vscode-bash"
+  },
+  "bugs": {
+    "url": "https://github.com/igetgames/vscode-bash/issues"
+  },
   "engines": {
     "vscode": "^1.50.0"
   },
   "categories": [
-    "Other"
+    "Programming Languages"
   ],
   "activationEvents": [
-    "onCommand:vscode-bashio.helloWorld"
+    "onLanguage:shellscript"
   ],
   "main": "./out/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "vscode-bashio.helloWorld",
-        "title": "Hello World"
-      }
-    ]
-  },
+  "contributes": {},
   "scripts": {
     "vscode:prepublish": "npm run compile",
     "compile": "tsc -p ./",
