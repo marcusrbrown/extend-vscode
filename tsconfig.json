@@ -17,6 +17,8 @@
   },
   "exclude": [
     "node_modules",
-    ".vscode-test"
+    ".vscode-test",
+    "test",
+    "__mocks__"
   ]
 }
