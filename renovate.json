@@ -1,20 +1,45 @@
 {
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+
   "extends": [
-    "config:base",
-    "group:monorepos"
+    ":separateMajorReleases",
+    ":combinePatchMinorReleases",
+    ":ignoreUnstable",
+    ":prImmediately",
+    ":semanticPrefixFixDepsChoreOthers",
+    ":updateNotScheduled",
+    ":ignoreModulesAndTests",
+    ":autodetectPinVersions",
+    ":prHourlyLimitNone",
+    ":prConcurrentLimitNone",
+    "group:monorepos",
+    "group:recommended",
+    "helpers:disableTypesNodeMajor",
+    "workarounds:all",
+    ":dependencyDashboard",
+    ":maintainLockFilesMonthly",
+    ":pinAllExceptPeerDependencies"
   ],
-  
+
+  "schedule": ["after 4pm and before 8am every weekday also every weekend"],
+  "timezone": "America/Phoenix",
+
+  "labels": ["dependencies"],
   "rebaseWhen": "auto",
-  "semanticCommits": true,
-  
+  "semanticCommits": "enabled",
+
   "packageRules": [
     {
-      "updateTypes": ["minor", "patch", "pin", "digest"],
-      "automerge": true
+      "automerge": true,
+      "matchUpdateTypes": ["minor", "patch", "pin", "digest"]
     },
     {
-      "depTypeList": ["devDependencies"],
-      "automerge": true
+      "automerge": true,
+      "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "automerge": false,
+      "matchUpdateTypes": ["major"]
     }
   ]
 }
