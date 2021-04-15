@@ -13,7 +13,11 @@ jobs:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
     steps:
-      - uses: actions/checkout@v2
+      - name: Configure Git to ignore line endings
+        run: git config --global core.autocrlf input
+
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Setup Node
         uses: actions/setup-node@v1
