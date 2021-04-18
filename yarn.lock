@@ -2100,15 +2100,18 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint-plugin-prettier@npm:3.1.4":
-  version: 3.1.4
-  resolution: "eslint-plugin-prettier@npm:3.1.4"
+"eslint-plugin-prettier@npm:3.4.0":
+  version: 3.4.0
+  resolution: "eslint-plugin-prettier@npm:3.4.0"
   dependencies:
     prettier-linter-helpers: ^1.0.0
   peerDependencies:
     eslint: ">=5.0.0"
     prettier: ">=1.13.0"
-  checksum: 4e4df155790a20a7ceef9008bbc22a677a8f7e790e9ef613a049a78dfe0b5dc3726afcd4bfd2a8ce41abc88c9a11db029819a722f70b940da32a03629e7f7832
+  peerDependenciesMeta:
+    eslint-config-prettier:
+      optional: true
+  checksum: 322be1af8c7a6b7f1c718d912090722b65da072fda05bbc0a9d94523e6c3dfda49a7f62fd411126f1909c12bbc63e827ee6459163b2ce3458adb292541decf66
   languageName: node
   linkType: hard
 
@@ -6044,7 +6047,7 @@ typescript@4.2.4:
     "@typescript-eslint/parser": 4.22.0
     eslint: 7.12.1
     eslint-config-prettier: 8.2.0
-    eslint-plugin-prettier: 3.1.4
+    eslint-plugin-prettier: 3.4.0
     glob: 7.1.6
     jest: 26.6.3
     prettier: 2.2.1
