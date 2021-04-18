@@ -25,11 +25,11 @@
   "main": "./out/extension.js",
   "contributes": {},
   "scripts": {
-    "vscode:prepublish": "npm run compile",
+    "vscode:prepublish": "yarn compile",
     "compile": "tsc -p ./",
     "lint": "eslint src --ext ts",
     "watch": "tsc -watch -p ./",
-    "pretest": "npm run lint",
+    "pretest": "yarn lint",
     "test": "jest"
   },
   "devDependencies": {
