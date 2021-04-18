@@ -46,9 +46,9 @@ jobs:
             **/node_modules
             **/.eslintcache
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-${{ env.NODE_VERSION }}-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-
+            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-
 
       - name: Install dependencies
         run: yarn install --immutable
