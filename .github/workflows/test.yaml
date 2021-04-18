@@ -18,16 +18,21 @@ jobs:
       NODE_VERSION: ${{ matrix.node-version }}
 
     steps:
-      - name: Configure Git to ignore line endings
-        run: git config --global core.autocrlf input
-
-      - name: Checkout
-        uses: actions/checkout@v2
-
       - name: Setup Node ${{ env.NODE_VERSION }}
         uses: actions/setup-node@v2
         with:
           node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure
+        shell: bash
+        run: |
+          git config --global core.autocrlf false
+          npm config set scripts-prepend-node-path true
+          echo "Node $(node --version)"
+          echo "Yarn $(yarn --version)"
+
+      - name: Checkout
+        uses: actions/checkout@v2
 
       - name: Get Yarn cache
         id: yarn-cache-dir-path
