@@ -7,23 +7,32 @@ on:
     branches: [main]
 
 jobs:
-  build:
+  test:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        node-version: [12.x]
+        node-version: [12]
+
+    env:
+      NODE_VERSION: ${{ matrix.node-version }}
+
     steps:
-      - name: Configure Git to ignore line endings
-        run: git config --global core.autocrlf input
+      - name: Setup Node ${{ env.NODE_VERSION }}
+        uses: actions/setup-node@v2
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+
+      - name: Configure
+        shell: bash
+        run: |
+          git config --global core.autocrlf false
+          npm config set scripts-prepend-node-path true
+          echo "Node $(node --version)"
+          echo "Yarn $(yarn --version)"
 
       - name: Checkout
         uses: actions/checkout@v2
-
-      - name: Setup Node ${{ matrix.node-version }}
-        uses: actions/setup-node@v2
-        with:
-          node-version: ${{ matrix.node-version }}
 
       - name: Get Yarn cache
         id: yarn-cache-dir-path
@@ -34,12 +43,20 @@ jobs:
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           path: |
-            **/node_modules
             **/.eslintcache
+            **/node_modules
             ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-yarn-${{ matrix.node-version }}-${{ hashFiles('**/yarn.lock') }}
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-${{ hashFiles('**/yarn.lock') }}
           restore-keys: |
-            ${{ runner.os }}-yarn-${{ matrix.node-version }}-
+            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-
+
+      - name: Clear Yarn cache
+        if: steps.yarn-cache.outputs.cache-hit != 'true'
+        shell: bash
+        run: |
+          rm -rf .eslintcache
+          rm -rf node_modules
+          yarn cache clean
 
       - name: Install dependencies
         run: yarn install --immutable
