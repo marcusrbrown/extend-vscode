@@ -1018,13 +1018,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/glob@npm:7.1.3":
-  version: 7.1.3
-  resolution: "@types/glob@npm:7.1.3"
+"@types/glob@npm:7.2.0":
+  version: 7.2.0
+  resolution: "@types/glob@npm:7.2.0"
   dependencies:
     "@types/minimatch": "*"
     "@types/node": "*"
-  checksum: 633bf1dda9a30899b233ed6b97c75cdd59f2ee856a12240c85474ce6889e26b3b3520b62de56f6bb61824af0ef51b311a0cae305f27ba0de8ddc4898a3673d42
+  checksum: 7ffc39eae2ee62ddbb3062f332cf3abb9f9d0a91821821e032cab9e38a1362f0f6f9eb5c34fb0b40647a25e57884e68462d5fb635810ad9ad12f5f6b2c393f8b
   languageName: node
   linkType: hard
 
@@ -2507,21 +2507,7 @@ fsevents@^2.3.2:
   languageName: node
   linkType: hard
 
-"glob@npm:7.1.7":
-  version: 7.1.7
-  resolution: "glob@npm:7.1.7"
-  dependencies:
-    fs.realpath: ^1.0.0
-    inflight: ^1.0.4
-    inherits: 2
-    minimatch: ^3.0.4
-    once: ^1.3.0
-    path-is-absolute: ^1.0.0
-  checksum: 352f74f08247db5420161a2f68f2bd84b53228b5fcfc9dcc37cd54d3f19ec0232495d84aeff1286d0727059e9fdc1031400e00b971bdc59e30f8f82b199c9d02
-  languageName: node
-  linkType: hard
-
-"glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
+"glob@npm:7.2.0, glob@npm:^7.1.1, glob@npm:^7.1.2, glob@npm:^7.1.3, glob@npm:^7.1.4":
   version: 7.2.0
   resolution: "glob@npm:7.2.0"
   dependencies:
@@ -4837,7 +4823,7 @@ typescript@4.2.4:
   version: 0.0.0-use.local
   resolution: "vscode-bash@workspace:."
   dependencies:
-    "@types/glob": 7.1.3
+    "@types/glob": 7.2.0
     "@types/jest": 26.0.24
     "@types/node": 12.20.42
     "@types/vscode": 1.63.1
@@ -4846,7 +4832,7 @@ typescript@4.2.4:
     eslint: 7.32.0
     eslint-config-prettier: 8.3.0
     eslint-plugin-prettier: 3.4.1
-    glob: 7.1.7
+    glob: 7.2.0
     jest: 27.4.7
     prettier: 2.4.1
     ts-jest: 27.0.3
