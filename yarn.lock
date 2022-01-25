@@ -4043,12 +4043,12 @@ fsevents@^2.3.2:
   languageName: node
   linkType: hard
 
-"prettier@npm:2.4.1":
-  version: 2.4.1
-  resolution: "prettier@npm:2.4.1"
+"prettier@npm:2.5.1":
+  version: 2.5.1
+  resolution: "prettier@npm:2.5.1"
   bin:
     prettier: bin-prettier.js
-  checksum: d72ebe33441651cdb334d05d8d180bedbb6f8ca9db47163719b9763f3f471d27b9dc86b9f2c9383773681ff836eb5951acd1809871077c9313609f7b7e05554e
+  checksum: c4d3328cfd9a8dfe016485ae20dd421cd56e22d700c85916d45b9b7aa3c42a0eec6f3f6a90db6a1572f7764cfe24ee59322122fc24b37f89e351e07f183605aa
   languageName: node
   linkType: hard
 
@@ -4834,7 +4834,7 @@ typescript@4.2.4:
     eslint-plugin-prettier: 3.4.1
     glob: 7.2.0
     jest: 27.4.7
-    prettier: 2.4.1
+    prettier: 2.5.1
     ts-jest: 27.0.3
     typescript: 4.2.4
   languageName: unknown
