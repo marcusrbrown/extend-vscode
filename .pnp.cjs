@@ -37,7 +37,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:26.0.24"],
-            ["@types/node", "npm:12.20.42"],
+            ["@types/node", "npm:12.20.45"],
             ["@types/vscode", "npm:1.63.1"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:4.33.0"],
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:4.33.0"],
@@ -1328,10 +1328,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/node", [
-        ["npm:12.20.42", {
-          "packageLocation": "./.yarn/cache/@types-node-npm-12.20.42-ad88e7d061-395b561315.zip/node_modules/@types/node/",
+        ["npm:12.20.45", {
+          "packageLocation": "./.yarn/cache/@types-node-npm-12.20.45-065dbb282b-9d52f90935.zip/node_modules/@types/node/",
           "packageDependencies": [
-            ["@types/node", "npm:12.20.42"]
+            ["@types/node", "npm:12.20.45"]
           ],
           "linkType": "HARD",
         }],
@@ -5782,7 +5782,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["vscode-bash", "workspace:."],
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:26.0.24"],
-            ["@types/node", "npm:12.20.42"],
+            ["@types/node", "npm:12.20.45"],
             ["@types/vscode", "npm:1.63.1"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:4.33.0"],
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:4.33.0"],
