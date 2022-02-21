@@ -48,7 +48,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:27.4.7"],
             ["prettier", "npm:2.5.1"],
             ["ts-jest", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:27.1.3"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
@@ -1422,7 +1422,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["regexpp", "npm:3.2.0"],
             ["semver", "npm:7.3.5"],
             ["tsutils", "virtual:463e66dfb478d4a1e9f67f63da5f09e65c0257c4a5b480db7296d4e527f4bbdf3eee9cd6c0032035f4a6d5dd87dea75d796a30ad606bd1da8a623008f8eeec25#npm:3.21.0"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -1482,7 +1482,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@typescript-eslint/typescript-estree", "virtual:10d1410ddc483403398d075738792c58e47c913586f44ca2aa4866b131bd5453518466683b17acaa88e89351d856623a1495b514ff13a5ac07e68817762d9ecb#npm:4.33.0"],
             ["debug", "virtual:ee1bbcab87c0701d4ea83dd18afa59b10c6343191c17b3a8e7844ecdde3ca8e8977791131460b822baae289e9261b3b228709bc45987d850e69091b4d363edfa#npm:4.3.3"],
             ["eslint", "npm:7.32.0"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "packagePeers": [
             "@types/eslint",
@@ -1533,7 +1533,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["is-glob", "npm:4.0.3"],
             ["semver", "npm:7.3.5"],
             ["tsutils", "virtual:463e66dfb478d4a1e9f67f63da5f09e65c0257c4a5b480db7296d4e527f4bbdf3eee9cd6c0032035f4a6d5dd87dea75d796a30ad606bd1da8a623008f8eeec25#npm:3.21.0"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -5580,7 +5580,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["lodash.memoize", "npm:4.1.2"],
             ["make-error", "npm:1.3.6"],
             ["semver", "npm:7.3.5"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"],
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"],
             ["yargs-parser", "npm:20.2.9"]
           ],
           "packagePeers": [
@@ -5621,7 +5621,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["tsutils", "virtual:463e66dfb478d4a1e9f67f63da5f09e65c0257c4a5b480db7296d4e527f4bbdf3eee9cd6c0032035f4a6d5dd87dea75d796a30ad606bd1da8a623008f8eeec25#npm:3.21.0"],
             ["@types/typescript", null],
             ["tslib", "npm:1.14.1"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "packagePeers": [
             "@types/typescript",
@@ -5698,10 +5698,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["typescript", [
-        ["patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53", {
-          "packageLocation": "./.yarn/cache/typescript-patch-fedbcf8dc2-bafcad6990.zip/node_modules/typescript/",
+        ["patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53", {
+          "packageLocation": "./.yarn/cache/typescript-patch-3020d8933d-c05c318d79.zip/node_modules/typescript/",
           "packageDependencies": [
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "linkType": "HARD",
         }]
@@ -5793,7 +5793,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["jest", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:27.4.7"],
             ["prettier", "npm:2.5.1"],
             ["ts-jest", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:27.1.3"],
-            ["typescript", "patch:typescript@npm%3A4.2.4#~builtin<compat/typescript>::version=4.2.4&hash=493e53"]
+            ["typescript", "patch:typescript@npm%3A4.5.5#~builtin<compat/typescript>::version=4.5.5&hash=493e53"]
           ],
           "linkType": "SOFT",
         }]
