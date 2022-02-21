@@ -15,9 +15,6 @@ env:
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, windows-latest, ubuntu-latest]
 
     steps:
       - name: Setup Node ${{ env.NODE_VERSION }}
