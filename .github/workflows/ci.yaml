@@ -9,16 +9,15 @@ concurrency:
   group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
   cancel-in-progress: true
 
+env:
+  NODE_VERSION: 12
+
 jobs:
   ci:
     runs-on: ${{ matrix.os }}
     strategy:
       matrix:
         os: [macos-latest, windows-latest, ubuntu-latest]
-        node-version: [12]
-
-    env:
-      NODE_VERSION: ${{ matrix.node-version }}
 
     steps:
       - name: Setup Node ${{ env.NODE_VERSION }}
