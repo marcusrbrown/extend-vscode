@@ -38,7 +38,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.4.1"],
             ["@types/node", "npm:12.20.46"],
-            ["@types/vscode", "npm:1.64.0"],
+            ["@types/vscode", "npm:1.65.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.13.0"],
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.13.0"],
             ["eslint", "npm:8.10.0"],
@@ -1354,10 +1354,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/vscode", [
-        ["npm:1.64.0", {
-          "packageLocation": "./.yarn/cache/@types-vscode-npm-1.64.0-a4929cc351-428cfce7f3.zip/node_modules/@types/vscode/",
+        ["npm:1.65.0", {
+          "packageLocation": "./.yarn/cache/@types-vscode-npm-1.65.0-7e83ddab33-8bd8b6c9cf.zip/node_modules/@types/vscode/",
           "packageDependencies": [
-            ["@types/vscode", "npm:1.64.0"]
+            ["@types/vscode", "npm:1.65.0"]
           ],
           "linkType": "HARD",
         }]
@@ -5745,7 +5745,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:7.2.0"],
             ["@types/jest", "npm:27.4.1"],
             ["@types/node", "npm:12.20.46"],
-            ["@types/vscode", "npm:1.64.0"],
+            ["@types/vscode", "npm:1.65.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.13.0"],
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.13.0"],
             ["eslint", "npm:8.10.0"],
