@@ -855,10 +855,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:12.20.52":
-  version: 12.20.52
-  resolution: "@types/node@npm:12.20.52"
-  checksum: b720ee939a43f1427baf1606deee97e50892ff482bf3d64ab8a1eda3a50802a80866a232aeab337621f6ea4fdc4515147d7829337653e9e99d97c3aaeec3615d
+"@types/node@npm:12.20.54":
+  version: 12.20.54
+  resolution: "@types/node@npm:12.20.54"
+  checksum: 7522e98053e2242be4b54eb463270e4279c578f62caa9aa5ac794bd3d9fa4723abc7ffc8f2b5e7c15b2f20a476ae30f0d10d86ff5bf42d2f19e51b28f15e6b70
   languageName: node
   linkType: hard
 
@@ -4647,7 +4647,7 @@ resolve@^1.20.0:
   dependencies:
     "@types/glob": 7.2.0
     "@types/jest": 27.5.2
-    "@types/node": 12.20.52
+    "@types/node": 12.20.54
     "@types/vscode": 1.67.0
     "@typescript-eslint/eslint-plugin": 5.26.0
     "@typescript-eslint/parser": 5.26.0
