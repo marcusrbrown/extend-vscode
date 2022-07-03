@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:28.1.3"],
+            ["@types/jest", "npm:28.1.4"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.68.1"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.30.0"],
@@ -1379,10 +1379,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/jest", [
-        ["npm:28.1.3", {
-          "packageLocation": "./.yarn/cache/@types-jest-npm-28.1.3-4e0f1f0cb8-28141f2d5b.zip/node_modules/@types/jest/",
+        ["npm:28.1.4", {
+          "packageLocation": "./.yarn/cache/@types-jest-npm-28.1.4-0d5921a434-97e22c6003.zip/node_modules/@types/jest/",
           "packageDependencies": [
-            ["@types/jest", "npm:28.1.3"],
+            ["@types/jest", "npm:28.1.4"],
             ["jest-matcher-utils", "npm:28.1.1"],
             ["pretty-format", "npm:28.1.1"]
           ],
@@ -5220,7 +5220,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],
             ["@types/babel__core", null],
             ["@types/esbuild", null],
-            ["@types/jest", "npm:28.1.3"],
+            ["@types/jest", "npm:28.1.4"],
             ["@types/typescript", null],
             ["babel-jest", null],
             ["bs-logger", "npm:0.2.6"],
@@ -5406,7 +5406,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["vscode-bash", "workspace:."],
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:28.1.3"],
+            ["@types/jest", "npm:28.1.4"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.68.1"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.30.0"],
