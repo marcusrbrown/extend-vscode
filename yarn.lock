@@ -950,10 +950,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vscode@npm:1.68.1":
-  version: 1.68.1
-  resolution: "@types/vscode@npm:1.68.1"
-  checksum: 1a8c086f699ace1a88493ae451905673a4948e20562b7fb6d8494d35e5c28177545a940afa58ba40b0be52f5ece40217f88592b9d2823c408c9bc7df60ae3bbe
+"@types/vscode@npm:1.69.0":
+  version: 1.69.0
+  resolution: "@types/vscode@npm:1.69.0"
+  checksum: 58d657c2c398d8ec5b8f0264f91140d182b9beddb42f1c2277c4ed6438ef5112532d450acd6eea85f16da99a6a0f39d7f417974a4a3ac47b31f175fd8a3325de
   languageName: node
   linkType: hard
 
@@ -4241,7 +4241,7 @@ resolve@^1.20.0:
     "@types/glob": 7.2.0
     "@types/jest": 28.1.4
     "@types/node": 12.20.55
-    "@types/vscode": 1.68.1
+    "@types/vscode": 1.69.0
     "@typescript-eslint/eslint-plugin": 5.30.5
     "@typescript-eslint/parser": 5.30.5
     eslint: 8.19.0
