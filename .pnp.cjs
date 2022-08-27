@@ -36,7 +36,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:28.1.7"],
+            ["@types/jest", "npm:28.1.8"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.70.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.34.0"],
@@ -1388,10 +1388,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/jest", [
-        ["npm:28.1.7", {
-          "packageLocation": "./.yarn/cache/@types-jest-npm-28.1.7-d501839892-17c9bf9667.zip/node_modules/@types/jest/",
+        ["npm:28.1.8", {
+          "packageLocation": "./.yarn/cache/@types-jest-npm-28.1.8-c361b866d1-d4cd36158a.zip/node_modules/@types/jest/",
           "packageDependencies": [
-            ["@types/jest", "npm:28.1.7"],
+            ["@types/jest", "npm:28.1.8"],
             ["expect", "npm:28.1.3"],
             ["pretty-format", "npm:28.1.3"]
           ],
@@ -5267,7 +5267,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],
             ["@types/babel__core", null],
             ["@types/esbuild", null],
-            ["@types/jest", "npm:28.1.7"],
+            ["@types/jest", "npm:28.1.8"],
             ["@types/jest__types", null],
             ["@types/typescript", null],
             ["babel-jest", null],
@@ -5456,7 +5456,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [
             ["vscode-bash", "workspace:."],
             ["@types/glob", "npm:7.2.0"],
-            ["@types/jest", "npm:28.1.7"],
+            ["@types/jest", "npm:28.1.8"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.70.0"],
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.34.0"],
