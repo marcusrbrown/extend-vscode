@@ -35,7 +35,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         [null, {
           "packageLocation": "./",
           "packageDependencies": [
-            ["@types/glob", "npm:7.2.0"],
+            ["@types/glob", "npm:8.0.0"],
             ["@types/jest", "npm:29.0.3"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.71.0"],
@@ -1370,10 +1370,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]
       ]],
       ["@types/glob", [
-        ["npm:7.2.0", {
-          "packageLocation": "./.yarn/cache/@types-glob-npm-7.2.0-772334bf9a-6ae717fedf.zip/node_modules/@types/glob/",
+        ["npm:8.0.0", {
+          "packageLocation": "./.yarn/cache/@types-glob-npm-8.0.0-02bd6d4d05-1817b05f5a.zip/node_modules/@types/glob/",
           "packageDependencies": [
-            ["@types/glob", "npm:7.2.0"],
+            ["@types/glob", "npm:8.0.0"],
             ["@types/minimatch", "npm:3.0.5"],
             ["@types/node", "npm:17.0.13"]
           ],
@@ -5488,7 +5488,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",
           "packageDependencies": [
             ["vscode-bash", "workspace:."],
-            ["@types/glob", "npm:7.2.0"],
+            ["@types/glob", "npm:8.0.0"],
             ["@types/jest", "npm:29.0.3"],
             ["@types/node", "npm:12.20.55"],
             ["@types/vscode", "npm:1.71.0"],

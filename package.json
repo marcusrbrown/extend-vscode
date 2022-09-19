@@ -33,7 +33,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@types/glob": "7.2.0",
+    "@types/glob": "8.0.0",
     "@types/jest": "29.0.3",
     "@types/node": "12.20.55",
     "@types/vscode": "1.71.0",
