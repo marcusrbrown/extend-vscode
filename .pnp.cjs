@@ -29,7 +29,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageLocation": "./",\
           "packageDependencies": [\
             ["@types/glob", "npm:8.0.0"],\
-            ["@types/jest", "npm:29.2.0"],\
+            ["@types/jest", "npm:29.2.1"],\
             ["@types/node", "npm:12.20.55"],\
             ["@types/vscode", "npm:1.72.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.0"],\
@@ -1403,10 +1403,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/jest", [\
-        ["npm:29.2.0", {\
-          "packageLocation": "./.yarn/cache/@types-jest-npm-29.2.0-08120e58d2-6779e63d8d.zip/node_modules/@types/jest/",\
+        ["npm:29.2.1", {\
+          "packageLocation": "./.yarn/cache/@types-jest-npm-29.2.1-36a85a6f8e-5610c9a44c.zip/node_modules/@types/jest/",\
           "packageDependencies": [\
-            ["@types/jest", "npm:29.2.0"],\
+            ["@types/jest", "npm:29.2.1"],\
             ["expect", "npm:29.2.2"],\
             ["pretty-format", "npm:29.2.1"]\
           ],\
@@ -5292,7 +5292,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/babel-jest", null],\
             ["@types/babel__core", null],\
             ["@types/esbuild", null],\
-            ["@types/jest", "npm:29.2.0"],\
+            ["@types/jest", "npm:29.2.1"],\
             ["@types/jest__types", null],\
             ["@types/typescript", null],\
             ["babel-jest", null],\
@@ -5472,7 +5472,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
           "packageDependencies": [\
             ["vscode-bash", "workspace:."],\
             ["@types/glob", "npm:8.0.0"],\
-            ["@types/jest", "npm:29.2.0"],\
+            ["@types/jest", "npm:29.2.1"],\
             ["@types/node", "npm:12.20.55"],\
             ["@types/vscode", "npm:1.72.0"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.0"],\
