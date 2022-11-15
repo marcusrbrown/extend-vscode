@@ -31,7 +31,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:8.0.0"],\
             ["@types/jest", "npm:29.2.3"],\
             ["@types/node", "npm:12.20.55"],\
-            ["@types/vscode", "npm:1.73.0"],\
+            ["@types/vscode", "npm:1.73.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.1"],\
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.1"],\
             ["eslint", "npm:8.27.0"],\
@@ -1485,10 +1485,10 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
         }]\
       ]],\
       ["@types/vscode", [\
-        ["npm:1.73.0", {\
-          "packageLocation": "./.yarn/cache/@types-vscode-npm-1.73.0-72f3962fbc-a9c778b738.zip/node_modules/@types/vscode/",\
+        ["npm:1.73.1", {\
+          "packageLocation": "./.yarn/cache/@types-vscode-npm-1.73.1-d93a7d1bce-cb38e85837.zip/node_modules/@types/vscode/",\
           "packageDependencies": [\
-            ["@types/vscode", "npm:1.73.0"]\
+            ["@types/vscode", "npm:1.73.1"]\
           ],\
           "linkType": "HARD"\
         }]\
@@ -5512,7 +5512,7 @@ function $$SETUP_STATE(hydrateRuntimeState, basePath) {
             ["@types/glob", "npm:8.0.0"],\
             ["@types/jest", "npm:29.2.3"],\
             ["@types/node", "npm:12.20.55"],\
-            ["@types/vscode", "npm:1.73.0"],\
+            ["@types/vscode", "npm:1.73.1"],\
             ["@typescript-eslint/eslint-plugin", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.1"],\
             ["@typescript-eslint/parser", "virtual:c504b0a8655f411abe3d1e1589c2e9ad464496c15d0c02035ec76519c249dec5010ce10c2e3c49325480af2aca6050abaea7db052a9b826e91f195ba4d4ca563#npm:5.42.1"],\
             ["eslint", "npm:8.27.0"],\
