@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/igetgames/vscode-bash/issues"
   },
-  "packageManager": "yarn@3.2.4",
+  "packageManager": "yarn@3.3.0",
   "engines": {
     "vscode": "^1.50.0"
   },
