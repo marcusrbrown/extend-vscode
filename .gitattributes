@@ -2,5 +2,8 @@
 * text=auto eol=lf
 
 *.zip binary
-.pnp* linguist-vendored
-.yarn/** linguist-vendored
+.pnp.cjs linguist-vendored
+.pnp.loader.mjs linguist-vendored
+.yarn/releases/* linguist-vendored
+.yarn/plugins/* linguist-vendored
+.yarn/sdks/* linguist-vendored

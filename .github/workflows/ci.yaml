@@ -1,17 +1,15 @@
-name: ci
+name: CI
 
 on:
   push:
     branches: [main, 'renovate/**']
   pull_request:
     branches: [main]
+  workflow_dispatch:
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
   cancel-in-progress: true
-
-env:
-  NODE_VERSION: 16
 
 jobs:
   ci:
@@ -22,6 +20,8 @@ jobs:
         uses: actions/setup-node@8c91899e586c5b171469028077307d293428b516 # tag=v3.5.1
         with:
           node-version: ${{ env.NODE_VERSION }}
+        env:
+          NODE_VERSION: 16 # renovate: datasource=node depName=node
 
       - name: Configure
         shell: bash
@@ -34,31 +34,31 @@ jobs:
         uses: actions/checkout@755da8c3cf115ac066823e79a1e1788f8940201b # v3.2.0
 
       - name: Get Yarn cache
-        id: yarn-cache-dir-path
-        run: echo "::set-output name=dir::$(yarn config get cacheFolder)"
+        id: yarn-config
+        run: |
+          echo "CACHE_FOLDER=$(yarn config get cacheFolder)" >> $GITHUB_OUTPUT
+          echo "INSTALL_STATE_PATH=$(yarn config get installStatePath)" >> $GITHUB_OUTPUT
 
-      - name: Use Yarn cache
+      - name: Restore Yarn cache
         uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # tag=v3.0.11
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
-          path: |
-            **/.eslintcache
-            **/node_modules
-            ${{ steps.yarn-cache-dir-path.outputs.dir }}
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-${{ hashFiles('**/yarn.lock') }}
+          key: yarn-cache-${{ hashFiles('yarn.lock') }}
+          path: ${{ steps.yarn-config.outputs.CACHE_FOLDER }}
           restore-keys: |
-            ${{ runner.os }}-node-${{ env.NODE_VERSION }}-yarn-
+            yarn-cache-
 
-      - name: Clear Yarn cache
-        if: steps.yarn-cache.outputs.cache-hit != 'true'
-        shell: bash
-        run: |
-          rm -rf .eslintcache
-          rm -rf node_modules
-          yarn cache clean
+      - name: Restore Yarn install state
+        id: yarn-install-state-cache
+        uses: actions/cache@9b0c1fce7a93df8e3bb8926b0d6e9d89e92f20a7 # tag=v3.0.11
+        with:
+          key: ${{ runner.os }}-yarn-install-state-cache-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
+          path: ${{ steps.yarn-config.outputs.INSTALL_STATE_PATH }}
 
       - name: Install dependencies
         run: yarn install --immutable
+        env:
+          YARN_NM_MODE: 'hardlinks-local'
 
       - name: Run tests
         run: yarn test
