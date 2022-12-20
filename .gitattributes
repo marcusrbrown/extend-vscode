@@ -4,6 +4,6 @@
 *.zip binary
 .pnp.cjs linguist-vendored
 .pnp.loader.mjs linguist-vendored
-.yarn/releases/** linguist-vendored
-.yarn/plugins/** linguist-vendored
-.yarn/sdks/** linguist-vendored
+.yarn/releases/* linguist-vendored
+.yarn/plugins/* linguist-vendored
+.yarn/sdks/* linguist-vendored
