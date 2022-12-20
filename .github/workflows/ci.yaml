@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ env.NODE_VERSION }}
         env:
-          NODE_VERSION: 16.19.0 # renovate: datasource=node depName=node
+          NODE_VERSION: 18.12.1 # renovate: datasource=node depName=node
 
       - name: Configure
         shell: bash
