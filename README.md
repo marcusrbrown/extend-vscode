@@ -2,13 +2,12 @@
 
 > This is the README for your extension "vscode-bash". After writing up a brief description, we recommend including the following sections.
 
-[![GitHub Workflow ci Status](https://img.shields.io/github/workflow/status/marcusrbrown/vscode-bash/ci?style=for-the-badge&logo=github%20actions&logoColor=white)](https://github.com/marcusrbrown/vscode-bash/actions?query=workflow%3Aci "Search GitHub Actions for ci workflow")
+[![GitHub Workflow ci Status](https://img.shields.io/github/actions/workflow/status/marcusrbrown/vscode-bash/ci.yaml?branch=main&style=for-the-badge&logo=github%20actions&logoColor=white)](https://github.com/marcusrbrown/vscode-bash/actions?query=workflow%3Aci "Search GitHub Actions for CI workflow")
 
 ## Features
 
 Describe specific features of your extension including screenshots of your extension in action. Image paths are relative to this README file.
-
-For example if there is an image subfolder under your extension project workspace:
+For example, if there is an image subfolder under your extension project workspace:
 
 \!\[feature X\]\(images/feature-x.png\)
 
