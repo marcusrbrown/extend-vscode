@@ -2,7 +2,7 @@ name: CI
 
 on:
   push:
-    branches: [main, 'renovate/**']
+    branches: [main, "renovate/**"]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -58,7 +58,13 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
         env:
-          YARN_NM_MODE: 'hardlinks-local'
+          YARN_NM_MODE: "hardlinks-local"
+
+      - name: Check formatting
+        run: yarn check-format
+
+      - name: Lint
+        run: yarn lint
 
       - name: Run tests
         run: yarn test
