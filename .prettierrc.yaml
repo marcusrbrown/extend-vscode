@@ -1,0 +1,14 @@
+bracketSpacing: false
+singleQuote: true
+tabWidth: 2
+trailingComma: all
+overrides:
+  - files:
+      - ".vscode/*.json"
+    options:
+      tabWidth: 4
+  - files:
+      - "*.yaml"
+      - "*.yml"
+    options:
+      singleQuote: false
