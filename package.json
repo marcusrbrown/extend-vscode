@@ -3,19 +3,19 @@
   "displayName": "Bash",
   "description": "Full language support for the Bourne Again SHell (Bash)",
   "version": "0.1.0",
-  "author": "Marcus R. Brown <me@igetgam.es>",
-  "publisher": "igetgames",
+  "author": "Marcus R. Brown <contact@marcusrbrown.com>",
+  "publisher": "marcusrbrown",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/igetgames/vscode-bash"
+    "url": "https://github.com/marcusrbrown/vscode-bash"
   },
   "bugs": {
-    "url": "https://github.com/igetgames/vscode-bash/issues"
+    "url": "https://github.com/marcusrbrown/vscode-bash/issues"
   },
   "packageManager": "yarn@3.3.1",
   "engines": {
-    "vscode": "^1.50.0"
+    "vscode": "^1.71.0"
   },
   "categories": [
     "Programming Languages"
@@ -37,10 +37,12 @@
   "devDependencies": {
     "@types/glob": "8.0.0",
     "@types/jest": "29.2.4",
-    "@types/node": "12.20.55",
+    "@types/node": "18.x",
+    "@types/prettier": "^2",
     "@types/vscode": "1.74.0",
     "@typescript-eslint/eslint-plugin": "5.47.0",
     "@typescript-eslint/parser": "5.47.0",
+    "@vscode/test-electron": "^2.1.5",
     "eslint": "8.30.0",
     "eslint-config-prettier": "8.5.0",
     "glob": "8.0.3",
