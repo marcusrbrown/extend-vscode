@@ -40,7 +40,7 @@ jobs:
           echo "INSTALL_STATE_PATH=$(yarn config get installStatePath)" >> $GITHUB_OUTPUT
 
       - name: Restore Yarn cache
-        uses: actions/cache@4723a57e26efda3a62cbde1812113b730952852d # v3.2.2
+        uses: actions/cache@58c146cc91c5b9e778e71775dfe9bf1442ad9a12 # v3.2.3
         id: yarn-cache # use this to check for `cache-hit` (`steps.yarn-cache.outputs.cache-hit != 'true'`)
         with:
           key: yarn-cache-${{ hashFiles('yarn.lock') }}
@@ -50,7 +50,7 @@ jobs:
 
       - name: Restore Yarn install state
         id: yarn-install-state-cache
-        uses: actions/cache@4723a57e26efda3a62cbde1812113b730952852d # v3.2.2
+        uses: actions/cache@58c146cc91c5b9e778e71775dfe9bf1442ad9a12 # v3.2.3
         with:
           key: ${{ runner.os }}-yarn-install-state-cache-${{ hashFiles('yarn.lock', '.yarnrc.yml') }}
           path: ${{ steps.yarn-config.outputs.INSTALL_STATE_PATH }}
