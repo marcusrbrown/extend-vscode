@@ -1125,15 +1125,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@vscode/test-electron@npm:2.2.2":
-  version: 2.2.2
-  resolution: "@vscode/test-electron@npm:2.2.2"
+"@vscode/test-electron@npm:2.2.3":
+  version: 2.2.3
+  resolution: "@vscode/test-electron@npm:2.2.3"
   dependencies:
     http-proxy-agent: ^4.0.1
     https-proxy-agent: ^5.0.0
     rimraf: ^3.0.2
     unzipper: ^0.10.11
-  checksum: 0985ee3c604e1d098800219be3dfc5bbb11f6578f41888d7b80a9dacdcbe08d683bbba439559cc8519f728455df8e49daae976d03f0e57ad8786da8e222c75d8
+  checksum: 493c8296701bc9b3a29e2a67d76be953ed80bb102dbfa023e45551c9de13cb6d45c266103e5ff75deeeabdfd4f6f4a2086bd5fadcb3d940be60a718de68cd972
   languageName: node
   linkType: hard
 
@@ -4511,7 +4511,7 @@ __metadata:
     "@types/vscode": 1.74.0
     "@typescript-eslint/eslint-plugin": 5.49.0
     "@typescript-eslint/parser": 5.49.0
-    "@vscode/test-electron": 2.2.2
+    "@vscode/test-electron": 2.2.3
     eslint: 8.33.0
     eslint-config-prettier: 8.6.0
     glob: 8.1.0
