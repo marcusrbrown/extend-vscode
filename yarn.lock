@@ -1014,10 +1014,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/vscode@npm:1.78.1":
-  version: 1.78.1
-  resolution: "@types/vscode@npm:1.78.1"
-  checksum: 44370051a05fe5e06c12f0470b8a73e8e4b7f8f8c542aa5cfd98574dab35d2d216a758613b2a5880966f82bf9d575e06540a6b37d83cab6eddb8f8d1a832b59f
+"@types/vscode@npm:1.79.0":
+  version: 1.79.0
+  resolution: "@types/vscode@npm:1.79.0"
+  checksum: 74409a58fec216d8252585b1f9534b45133a820530a25a6c38f5f197a4a2e56df8b24282d6c7c5117d07fede9c4721180b0db3b45f6f99871059dac1a7e6cebc
   languageName: node
   linkType: hard
 
@@ -4524,7 +4524,7 @@ __metadata:
     "@types/jest": 29.5.2
     "@types/node": 18.16.16
     "@types/prettier": 2.7.3
-    "@types/vscode": 1.78.1
+    "@types/vscode": 1.79.0
     "@typescript-eslint/eslint-plugin": 5.59.9
     "@typescript-eslint/parser": 5.59.9
     "@vscode/test-electron": 2.3.2
