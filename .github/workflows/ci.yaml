@@ -25,7 +25,7 @@ jobs:
           cache: yarn
           node-version: ${{ env.NODE_VERSION }}
         env:
-          NODE_VERSION: 18.16.0 # renovate: datasource=node depName=node
+          NODE_VERSION: 18.16.1 # renovate: datasource=node depName=node
 
       - name: Install dependencies
         run: yarn install --immutable
