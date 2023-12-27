@@ -1,9 +1,6 @@
 # Auto detect text files and normalize EOL to LF
-* text=auto eol=lf
+* text=auto
 
 *.zip binary
-.pnp.cjs linguist-vendored
-.pnp.loader.mjs linguist-vendored
-.yarn/releases/* linguist-vendored
-.yarn/plugins/* linguist-vendored
-.yarn/sdks/* linguist-vendored
+
+*.json text linguist-language=JSON-with-comments
