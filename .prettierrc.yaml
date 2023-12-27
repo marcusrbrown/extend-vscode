@@ -3,11 +3,6 @@ singleQuote: true
 tabWidth: 2
 overrides:
   - files:
-      - ".vscode/*.json"
+      - '.vscode/*.json'
     options:
       tabWidth: 4
-  - files:
-      - "*.yaml"
-      - "*.yml"
-    options:
-      singleQuote: false

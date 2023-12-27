@@ -2,3 +2,5 @@
 * text=auto
 
 *.zip binary
+
+*.json text linguist-language=JSON-with-comments

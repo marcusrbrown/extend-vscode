@@ -2,6 +2,7 @@ name: CI
 
 on:
   push:
+    branches: ['**']
   pull_request:
     types: [opened, reopened, synchronize]
   workflow_dispatch:
@@ -25,7 +26,7 @@ jobs:
         uses: actions/setup-node@1a4442cacd436585916779262731d5b162bc6ec7 # v3.8.2
         with:
           cache: pnpm
-          node-version-file: ".node-version"
+          node-version-file: '.node-version'
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
