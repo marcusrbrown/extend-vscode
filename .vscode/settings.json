@@ -3,12 +3,11 @@
         "out": false
     },
     "search.exclude": {
-        "out": true,
-        "**/.yarn": true
+        "out": true
     },
 
     "editor.codeActionsOnSave": {
-        "source.fixAll.eslint": true
+        "source.fixAll.eslint": "explicit"
     },
     "editor.defaultFormatter": "esbenp.prettier-vscode",
     "editor.detectIndentation": false,
@@ -21,8 +20,8 @@
     },
 
     "typescript.enablePromptUseWorkspaceTsdk": true,
-    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
     "typescript.tsdk": "node_modules/typescript/lib",
+    // Turn off tsc task auto detection since we have the necessary tasks as npm scripts
     "typescript.tsc.autoDetect": "off",
 
     "yaml.format.enable": true

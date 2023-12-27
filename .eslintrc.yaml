@@ -7,7 +7,6 @@ ignorePatterns:
   - out
   - node_modules
   - .vscode-test
-  - .yarn
   - "**/*.d.ts"
 parserOptions:
   ecmaVersion: 6

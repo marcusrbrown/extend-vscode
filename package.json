@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/marcusrbrown/vscode-bash/issues"
   },
-  "packageManager": "yarn@3.7.0",
+  "packageManager": "pnpm@8.12.1",
   "engines": {
     "vscode": "^1.71.0"
   },
@@ -26,7 +26,7 @@
   "main": "./out/extension.js",
   "contributes": {},
   "scripts": {
-    "vscode:prepublish": "yarn compile",
+    "vscode:prepublish": "pnpm compile",
     "check-format": "prettier --check .",
     "format": "prettier --write .",
     "compile": "tsc -p ./",

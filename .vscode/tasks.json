@@ -6,7 +6,7 @@
         {
             "type": "shell",
             "label": "Compile TypeScript",
-            "command": "yarn watch",
+            "command": "pnpm watch",
             "problemMatcher": "$tsc-watch",
             "isBackground": true,
             "presentation": {

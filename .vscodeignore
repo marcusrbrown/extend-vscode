@@ -5,9 +5,7 @@ src/**
 .git*
 .pnp*
 .prettier*
-.yarnrc*
-.yarn/**
-yarn.lock
+pnpm-lock.yaml
 vsc-extension-quickstart.md
 **/tsconfig*.json
 **/.editorconfig
