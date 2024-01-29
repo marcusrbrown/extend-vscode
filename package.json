@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/marcusrbrown/vscode-bash/issues"
   },
-  "packageManager": "pnpm@8.15.0",
+  "packageManager": "pnpm@8.15.1",
   "engines": {
     "vscode": "^1.71.0"
   },
