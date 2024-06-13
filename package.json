@@ -1,17 +1,17 @@
 {
-  "name": "vscode-bash",
-  "displayName": "Bash",
-  "description": "Full language support for the Bourne Again SHell (Bash)",
+  "name": "extend-vscode",
+  "displayName": "Toolkit for building VS Code extensions.",
+  "description": "Toolkit for building VS Code extensions.",
   "version": "0.1.0",
   "author": "Marcus R. Brown <contact@marcusrbrown.com>",
   "publisher": "marcusrbrown",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcusrbrown/vscode-bash"
+    "url": "https://github.com/marcusrbrown/extend-vscode"
   },
   "bugs": {
-    "url": "https://github.com/marcusrbrown/vscode-bash/issues"
+    "url": "https://github.com/marcusrbrown/extend-vscode/issues"
   },
   "packageManager": "pnpm@9.3.0",
   "engines": {
