@@ -30,8 +30,8 @@ importers:
         specifier: 7.15.0
         version: 7.15.0(eslint@8.57.0)(typescript@5.4.5)
       '@vscode/test-electron':
-        specifier: 2.4.0
-        version: 2.4.0
+        specifier: 2.4.1
+        version: 2.4.1
       eslint:
         specifier: 8.57.0
         version: 8.57.0
@@ -492,8 +492,8 @@ packages:
   '@ungap/structured-clone@1.2.0':
     resolution: {integrity: sha512-zuVdFrMJiuCDQUMCzQaD6KL28MjnqqN8XnAqiEq9PNm/hCPTSGfrXCOfwj1ow4LFb/tNymJPwsNbVePc1xFqrQ==}
 
-  '@vscode/test-electron@2.4.0':
-    resolution: {integrity: sha512-yojuDFEjohx6Jb+x949JRNtSn6Wk2FAh4MldLE3ck9cfvCqzwxF32QsNy1T9Oe4oT+ZfFcg0uPUCajJzOmPlTA==}
+  '@vscode/test-electron@2.4.1':
+    resolution: {integrity: sha512-Gc6EdaLANdktQ1t+zozoBVRynfIsMKMc94Svu1QreOBC8y76x4tvaK32TljrLi1LI2+PK58sDVbL7ALdqf3VRQ==}
     engines: {node: '>=16'}
 
   acorn-jsx@5.3.2:
@@ -2385,7 +2385,7 @@ snapshots:
 
   '@ungap/structured-clone@1.2.0': {}
 
-  '@vscode/test-electron@2.4.0':
+  '@vscode/test-electron@2.4.1':
     dependencies:
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.5
