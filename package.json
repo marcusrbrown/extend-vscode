@@ -39,7 +39,7 @@
     "@types/jest": "29.5.12",
     "@types/node": "20.16.1",
     "@types/prettier": "3.0.0",
-    "@types/vscode": "1.93.0",
+    "@types/vscode": "1.94.0",
     "@typescript-eslint/eslint-plugin": "7.18.0",
     "@typescript-eslint/parser": "7.18.0",
     "@vscode/test-electron": "2.4.1",
