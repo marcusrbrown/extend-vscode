@@ -37,7 +37,7 @@
   "devDependencies": {
     "@types/glob": "8.1.0",
     "@types/jest": "29.5.14",
-    "@types/node": "20.17.6",
+    "@types/node": "20.17.7",
     "@types/prettier": "3.0.0",
     "@types/vscode": "1.95.0",
     "@typescript-eslint/eslint-plugin": "7.18.0",
