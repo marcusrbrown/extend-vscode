@@ -1,5 +1,5 @@
-import * as path from 'path';
-
+import * as path from 'node:path';
+import * as process from 'node:process';
 import {runTests} from '@vscode/test-electron';
 
 async function main() {
@@ -13,9 +13,18 @@ async function main() {
     const extensionTestsPath = path.resolve(__dirname, './suite/index');
 
     // Download VS Code, unzip it and run the integration test
-    await runTests({extensionDevelopmentPath, extensionTestsPath});
-  } catch (err) {
-    console.error('Failed to run tests');
+    await runTests({
+      extensionDevelopmentPath,
+      extensionTestsPath,
+      // Add Vitest CLI arguments
+      launchArgs: [
+        '--disable-extensions',
+        '--disable-gpu',
+        '--disable-workspace-trust',
+      ],
+    });
+  } catch (error) {
+    console.error('Failed to run tests:', error);
     process.exit(1);
   }
 }

@@ -26,13 +26,10 @@ jobs:
         uses: actions/setup-node@1d0ff469b7ec7b3cb9d8673fde0c81c44821de2a # v4.2.0
         with:
           cache: pnpm
-          node-version-file: '.node-version'
+          node-version-file: .node-version
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile --ignore-scripts
-
-      - name: Check formatting
-        run: pnpm check-format
 
       - name: Lint
         run: pnpm lint

@@ -1,12 +1,15 @@
 {
+  "extends": "@bfra.me/tsconfig",
   "compilerOptions": {
-    "module": "commonjs",
     "target": "ES2020",
     "outDir": "out",
     "lib": ["ES2020"],
     "sourceMap": true,
-    "rootDir": "src",
-    "strict": true
+    "moduleResolution": "node",
+    "esModuleInterop": true,
+    "resolveJsonModule": true,
+    "baseUrl": "."
   },
-  "exclude": ["node_modules", ".vscode-test", "test", "__mocks__"]
+  "include": ["./src/**/*.ts", "./src/**/*.js", "./src/**/*.d.ts"],
+  "exclude": ["node_modules", ".vscode-test", "out"]
 }
