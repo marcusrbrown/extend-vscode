@@ -1,0 +1,46 @@
+---
+# Renovate this repository if Renovate-specific tasks are checked or if dispatched.
+name: Renovate
+
+on:
+  issues:
+    types: [edited]
+  pull_request:
+    types: [edited]
+  push:
+    branches: ['**']
+  workflow_dispatch:
+    inputs:
+      log-level:
+        description: Log level for Renovate
+        required: false
+        type: string
+        default: debug
+      print-config:
+        description: Log the fully-resolved Renovate config for each repository, plus fully-resolved presets.
+        required: false
+        type: boolean
+        default: false
+  workflow_run:
+    branches: [main]
+    types: [completed]
+    workflows: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
+  cancel-in-progress: true
+
+permissions:
+  contents: read
+
+jobs:
+  renovate:
+    if: ${{ github.event_name != 'workflow_run' || github.event.workflow_run.conclusion == 'success' }}
+    name: Renovate
+    secrets:
+      APPLICATION_ID: ${{ secrets.APPLICATION_ID }}
+      APPLICATION_PRIVATE_KEY: ${{ secrets.APPLICATION_PRIVATE_KEY }}
+    uses: bfra-me/.github/.github/workflows/renovate.yaml@c18397a0adf7a17819e34595e2d499166d252dd5 # v2.0.6
+    with:
+      log_level: ${{ inputs.log-level || github.event_name == 'pull_request' && 'debug' || 'info' }}
+      print_config: ${{ inputs.print-config || false }}
