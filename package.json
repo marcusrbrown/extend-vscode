@@ -38,7 +38,7 @@
     "test:watch": "vitest"
   },
   "devDependencies": {
-    "@bfra.me/eslint-config": "0.16.4",
+    "@bfra.me/eslint-config": "0.16.5",
     "@bfra.me/tsconfig": "0.9.7",
     "@types/glob": "8.1.0",
     "@types/node": "22.13.4",
