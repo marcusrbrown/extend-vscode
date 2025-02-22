@@ -29,7 +29,7 @@ jobs:
           node-version-file: .node-version
 
       - name: Install dependencies
-        run: pnpm install --frozen-lockfile --ignore-scripts
+        run: pnpm bootstrap
 
       - name: Lint
         run: pnpm lint
@@ -38,4 +38,4 @@ jobs:
         run: pnpm test
 
       - name: Build
-        run: pnpm compile
+        run: pnpm build
