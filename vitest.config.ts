@@ -4,7 +4,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: 'node',
-    include: ['test/**/*.test.ts'],
+    include: ['test/**/*.test.ts', 'test/integration/**/*.test.ts'],
     exclude: ['**/node_modules/**', '**/dist/**', '**/out/**'],
     testTimeout: 10000,
     setupFiles: ['./test/setup.ts'],
@@ -17,6 +17,18 @@ export default defineConfig({
           exclude: ['vscode'],
         },
       },
+    },
+    coverage: {
+      provider: 'v8',
+      reporter: ['text', 'json', 'html'],
+      exclude: [
+        'coverage/**',
+        'dist/**',
+        'out/**',
+        '**/*.d.ts',
+        'test/**',
+        '**/__mocks__/**',
+      ],
     },
   },
 });

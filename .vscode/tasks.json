@@ -4,13 +4,14 @@
     "version": "2.0.0",
     "tasks": [
         {
-            "type": "shell",
-            "label": "Compile TypeScript",
-            "command": "pnpm watch",
-            "problemMatcher": "$tsc-watch",
+            "type": "npm",
+            "label": "👁️ watch",
+            "script": "watch",
+            "problemMatcher": ["$tsup-watch", "$tsup-tsc-watch"],
             "isBackground": true,
             "presentation": {
-                "reveal": "silent"
+                "group": "watchers",
+                "reveal": "never"
             },
             "group": {
                 "kind": "build",
