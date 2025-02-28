@@ -55,7 +55,7 @@
   "devDependencies": {
     "@bfra.me/eslint-config": "0.16.5",
     "@bfra.me/tsconfig": "0.9.7",
-    "@swc/core": "1.10.18",
+    "@swc/core": "1.11.1",
     "@types/glob": "8.1.0",
     "@types/node": "22.13.4",
     "@types/vscode": "1.97.0",
