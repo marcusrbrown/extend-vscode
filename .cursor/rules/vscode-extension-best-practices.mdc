@@ -1,0 +1,10 @@
+---
+description: Best practices and guidelines for developing Visual Studio Code extensions
+globs: **/*.{ts,tsx}, package.json
+alwaysApply: false
+---
+- Use the `vscode` namespace for all VS Code API interactions
+- Implement proper error handling and logging
+- Utilize `vscode.commands.registerCommand` for command registration
+- Follow the VS Code extension guidelines for activation events
+- Ensure compatibility with different VS Code versions using `engines`

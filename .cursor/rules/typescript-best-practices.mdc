@@ -1,0 +1,12 @@
+---
+description: TypeScript coding standards and type safety guidelines
+globs: *.ts, *.tsx
+alwaysApply: false
+---
+- Use strict null checks to prevent null or undefined errors
+- Prefer interfaces over types for better extensibility
+- Use generics for reusable components and functions
+- Leverage utility types like `Partial<T>`, `Readonly<T>`, and `Pick<T, K>` for more flexible type definitions
+- Utilize type guards and assertions for runtime type checking and narrowing
+- Use type inference where possible, but provide explicit types for complex scenarios
+- Use `readonly` arrays and properties to prevent unintended mutations.
