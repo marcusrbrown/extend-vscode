@@ -1,0 +1,9 @@
+---
+description: Vitest testing framework instructions and best practices
+globs: **/*.test.{ts,tsx,js,jsx}
+alwaysApply: false
+---
+- Write unit tests for individual functions and components
+- Use Vitest's mocking capabilities to isolate dependencies
+- Implement integration tests to verify system interactions
+- Utilize Vitest's coverage reporting to ensure adequate test coverage

@@ -1,0 +1,10 @@
+---
+description: Tsup bundler configuration and usage guidelines
+globs: tsup.config.*
+alwaysApply: false
+---
+- Configure Tsup to optimize bundle size and performance
+- Use Tsup's watch mode for efficient development and testing
+- Implement proper tree-shaking to eliminate dead code
+- Utilize Tsup's splitting capabilities for better code splitting and lazy loading
+- Use ESBuild options and plugins to tap into advanced features that suit the project
