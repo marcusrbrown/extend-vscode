@@ -39,8 +39,8 @@ importers:
         specifier: 2.4.1
         version: 2.4.1
       '@vscode/test-web':
-        specifier: 0.0.66
-        version: 0.0.66
+        specifier: 0.0.67
+        version: 0.0.67
       '@vscode/vsce':
         specifier: 3.2.2
         version: 3.2.2
@@ -866,8 +866,8 @@ packages:
     resolution: {integrity: sha512-Gc6EdaLANdktQ1t+zozoBVRynfIsMKMc94Svu1QreOBC8y76x4tvaK32TljrLi1LI2+PK58sDVbL7ALdqf3VRQ==}
     engines: {node: '>=16'}
 
-  '@vscode/test-web@0.0.66':
-    resolution: {integrity: sha512-4gFSQujh9vOmT3mZUKjBSbxDAL173rav4OAssO3pxWJuh/OZNXRdL4cLeYegodGUERI2tAGw6oyma1omTDMtUQ==}
+  '@vscode/test-web@0.0.67':
+    resolution: {integrity: sha512-lds5MHU/l45BXrqGCH39n2lrRcaMBSvcsoV/lg7u7s+A471yUyM4BR0MSsUBaQjvhCJVUOCJCr7VwNkr1iuMBA==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -4345,12 +4345,11 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vscode/test-web@0.0.66':
+  '@vscode/test-web@0.0.67':
     dependencies:
       '@koa/cors': 5.0.0
       '@koa/router': 13.1.0
       '@playwright/browser-chromium': 1.50.1
-      glob: 11.0.1
       gunzip-maybe: 1.4.2
       http-proxy-agent: 7.0.2
       https-proxy-agent: 7.0.6
@@ -4361,6 +4360,7 @@ snapshots:
       minimist: 1.2.8
       playwright: 1.50.1
       tar-fs: 3.0.8
+      tinyglobby: 0.2.12
       vscode-uri: 3.1.0
     transitivePeerDependencies:
       - bare-buffer
