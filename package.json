@@ -13,7 +13,7 @@
   "bugs": {
     "url": "https://github.com/marcusrbrown/extend-vscode/issues"
   },
-  "packageManager": "pnpm@9.15.9",
+  "packageManager": "pnpm@10.6.5",
   "engines": {
     "vscode": "^1.71.0"
   },
