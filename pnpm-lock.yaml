@@ -62,9 +62,6 @@ importers:
       eslint-plugin-prettier:
         specifier: 5.2.4
         version: 5.2.4(@types/eslint@9.6.1)(eslint-config-prettier@10.1.1(eslint@9.23.0(jiti@2.4.2)))(eslint@9.23.0(jiti@2.4.2))(prettier@3.5.3)
-      glob:
-        specifier: 10.4.5
-        version: 10.4.5
       prettier:
         specifier: 3.5.3
         version: 3.5.3
