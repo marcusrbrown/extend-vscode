@@ -39,11 +39,11 @@ importers:
         specifier: 2.4.1
         version: 2.4.1
       '@vscode/test-web':
-        specifier: 0.0.68
-        version: 0.0.68
+        specifier: 0.0.67
+        version: 0.0.67
       '@vscode/vsce':
-        specifier: 3.3.0
-        version: 3.3.0
+        specifier: 3.3.2
+        version: 3.3.2
       esbuild-plugin-polyfill-node:
         specifier: 0.3.0
         version: 0.3.0(esbuild@0.25.1)
@@ -949,8 +949,8 @@ packages:
     resolution: {integrity: sha512-Gc6EdaLANdktQ1t+zozoBVRynfIsMKMc94Svu1QreOBC8y76x4tvaK32TljrLi1LI2+PK58sDVbL7ALdqf3VRQ==}
     engines: {node: '>=16'}
 
-  '@vscode/test-web@0.0.68':
-    resolution: {integrity: sha512-MILEpLhFfok1GLl3nI7N3mUTiRxAfQ6Angfb+hK/NRvC2JjPKYb10D9k7VR9xizMu7rAKCRJtfT37nGCP8o5Hw==}
+  '@vscode/test-web@0.0.67':
+    resolution: {integrity: sha512-lds5MHU/l45BXrqGCH39n2lrRcaMBSvcsoV/lg7u7s+A471yUyM4BR0MSsUBaQjvhCJVUOCJCr7VwNkr1iuMBA==}
     engines: {node: '>=16'}
     hasBin: true
 
@@ -1002,8 +1002,8 @@ packages:
   '@vscode/vsce-sign@2.0.5':
     resolution: {integrity: sha512-GfYWrsT/vypTMDMgWDm75iDmAOMe7F71sZECJ+Ws6/xyIfmB3ELVnVN+LwMFAvmXY+e6eWhR2EzNGF/zAhWY3Q==}
 
-  '@vscode/vsce@3.3.0':
-    resolution: {integrity: sha512-HA/pUyvh/TQWkc4wG7AudPIWUvsR8i4jiWZZgM/a69ncPi9Nm5FDogf/wVEk4EWJs4/UdxU7J6X18dfAwfPbxA==}
+  '@vscode/vsce@3.3.2':
+    resolution: {integrity: sha512-XQ4IhctYalSTMwLnMS8+nUaGbU7v99Qm2sOoGfIEf2QC7jpiLXZZMh7NwArEFsKX4gHTJLx0/GqAUlCdC3gKCw==}
     engines: {node: '>= 20'}
     hasBin: true
 
@@ -4506,7 +4506,7 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  '@vscode/test-web@0.0.68':
+  '@vscode/test-web@0.0.67':
     dependencies:
       '@koa/cors': 5.0.0
       '@koa/router': 13.1.0
@@ -4566,7 +4566,7 @@ snapshots:
       '@vscode/vsce-sign-win32-arm64': 2.0.2
       '@vscode/vsce-sign-win32-x64': 2.0.2
 
-  '@vscode/vsce@3.3.0':
+  '@vscode/vsce@3.3.2':
     dependencies:
       '@azure/identity': 4.8.0
       '@vscode/vsce-sign': 2.0.5
