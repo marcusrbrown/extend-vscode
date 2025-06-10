@@ -35,7 +35,7 @@
     ]
   },
   "scripts": {
-    "bootstrap": "pnpm install --prefer-offline --loglevel error",
+    "bootstrap": "pnpm install --prefer-offline --loglevel warn",
     "vscode:prepublish": "pnpm run build",
     "check-format": "prettier --check .",
     "dev-node": "pnpm run watch --platform node --env.LAUNCH 1",
