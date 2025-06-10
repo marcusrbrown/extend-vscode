@@ -18,21 +18,109 @@
     "vscode": "^1.71.0"
   },
   "categories": [
-    "Programming Languages"
+    "Programming Languages",
+    "Other"
+  ],
+  "keywords": [
+    "vscode",
+    "extension",
+    "toolkit",
+    "utilities"
   ],
   "activationEvents": [
-    "onLanguage:shellscript"
+    "onStartupFinished"
   ],
   "main": "./out/node/extension.js",
   "browser": "./out/web/extension.js",
+  "exports": {
+    ".": {
+      "types": "./out/types/index.d.ts",
+      "browser": "./out/web/index.js",
+      "default": "./out/node/index.js"
+    },
+    "./commands": {
+      "types": "./out/types/commands/index.d.ts",
+      "browser": "./out/web/commands/index.js",
+      "default": "./out/node/commands/index.js"
+    },
+    "./configuration": {
+      "types": "./out/types/configuration/index.d.ts",
+      "browser": "./out/web/configuration/index.js",
+      "default": "./out/node/configuration/index.js"
+    },
+    "./webview": {
+      "types": "./out/types/webview/index.d.ts",
+      "browser": "./out/web/webview/index.js",
+      "default": "./out/node/webview/index.js"
+    },
+    "./treeView": {
+      "types": "./out/types/treeView/index.d.ts",
+      "browser": "./out/web/treeView/index.js",
+      "default": "./out/node/treeView/index.js"
+    },
+    "./tasks": {
+      "types": "./out/types/tasks/index.d.ts",
+      "browser": "./out/web/tasks/index.js",
+      "default": "./out/node/tasks/index.js"
+    },
+    "./statusBar": {
+      "types": "./out/types/statusBar/index.d.ts",
+      "browser": "./out/web/statusBar/index.js",
+      "default": "./out/node/statusBar/index.js"
+    },
+    "./telemetry": {
+      "types": "./out/types/telemetry/index.d.ts",
+      "browser": "./out/web/telemetry/index.js",
+      "default": "./out/node/telemetry/index.js"
+    },
+    "./utils": {
+      "types": "./out/types/utils/index.d.ts",
+      "browser": "./out/web/utils/index.js",
+      "default": "./out/node/utils/index.js"
+    }
+  },
   "contributes": {
     "commands": [
       {
         "command": "extend-vscode.webHello",
         "title": "Hello from Web Extension",
         "category": "Extend VSCode"
+      },
+      {
+        "command": "extend-vscode.showWebview",
+        "title": "Show Example Webview",
+        "category": "Extend VSCode"
+      },
+      {
+        "command": "extend-vscode.refreshTree",
+        "title": "Refresh Example Tree",
+        "category": "Extend VSCode"
       }
-    ]
+    ],
+    "views": {
+      "explorer": [
+        {
+          "id": "extend-vscode.exampleTree",
+          "name": "Example Tree View"
+        }
+      ]
+    },
+    "configuration": {
+      "title": "Extend VSCode",
+      "properties": {
+        "extend-vscode.logLevel": {
+          "type": "string",
+          "enum": [
+            "debug",
+            "info",
+            "warn",
+            "error"
+          ],
+          "default": "info",
+          "description": "The minimum log level to show in the output channel"
+        }
+      }
+    }
   },
   "scripts": {
     "bootstrap": "pnpm install --prefer-offline --loglevel warn",
@@ -49,8 +137,10 @@
     "test:ui": "vitest --ui",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
-    "test:integration": "vitest run test/integration",
-    "test:unit": "vitest run test/*.test.ts"
+    "test:integration": "tsx test/run-test.ts",
+    "test:web": "vitest run -c vitest.config.web.ts",
+    "test:web:watch": "vitest -c vitest.config.web.ts",
+    "test:web:coverage": "vitest run -c vitest.config.web.ts --coverage"
   },
   "devDependencies": {
     "@bfra.me/eslint-config": "0.20.1",
@@ -62,6 +152,7 @@
     "@vitest/coverage-v8": "3.2.2",
     "@vitest/eslint-plugin": "1.2.1",
     "@vitest/ui": "^3.0.6",
+    "@vscode/test-cli": "0.0.10",
     "@vscode/test-electron": "2.5.2",
     "@vscode/test-web": "0.0.67",
     "@vscode/vsce": "3.5.0",
@@ -72,8 +163,10 @@
     "eslint-plugin-node-dependencies": "1.1.1",
     "eslint-plugin-prettier": "5.4.1",
     "jiti": "<2.2.0",
+    "jsdom": "26.0.0",
     "prettier": "3.5.3",
     "tsup": "^8.0.2",
+    "tsx": "4.19.3",
     "typescript": "5.8.3",
     "typescript-eslint": "8.33.1",
     "vitest": "^3.0.6"
