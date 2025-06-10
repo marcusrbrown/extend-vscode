@@ -125,11 +125,11 @@
   "scripts": {
     "bootstrap": "pnpm install --prefer-offline --loglevel warn",
     "vscode:prepublish": "pnpm run build",
-    "check-format": "prettier --check .",
     "dev-node": "pnpm run watch --platform node --env.LAUNCH 1",
     "dev-web": "pnpm run watch --platform browser --env.LAUNCH 1",
-    "format": "prettier --write .",
-    "build": "tsc -p ./tsconfig.json && tsup",
+    "build": "tsup",
+    "generate:meta": "vscode-ext-gen --output src/generated/meta.ts",
+    "prepare": "pnpm run generate:meta",
     "watch": "tsup --watch",
     "lint": "eslint .",
     "fix": "eslint --fix .",
@@ -169,11 +169,15 @@
     "tsx": "4.19.3",
     "typescript": "5.8.3",
     "typescript-eslint": "8.33.1",
-    "vitest": "^3.0.6"
+    "vitest": "^3.0.6",
+    "vscode-ext-gen": "1.0.2"
   },
   "pnpm": {
     "overrides": {
       "jiti": "<2.2.0"
-    }
+    },
+    "onlyBuiltDependencies": [
+      "esbuild"
+    ]
   }
 }
