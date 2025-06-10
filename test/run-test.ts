@@ -5,23 +5,29 @@ import {runTests} from '@vscode/test-electron';
 async function main() {
   try {
     // The folder containing the Extension Manifest package.json
-    // Passed to `--extensionDevelopmentPath`
-    const extensionDevelopmentPath = path.resolve(__dirname, '../../');
+    const extensionDevelopmentPath = path.resolve(__dirname, '..');
 
-    // The path to test runner
-    // Passed to --extensionTestsPath
-    const extensionTestsPath = path.resolve(__dirname, './suite/index');
+    // The path to the integration test runner
+    const extensionTestsPath = path.resolve(
+      __dirname,
+      './integration/suite/index',
+    );
 
     // Download VS Code, unzip it and run the integration test
     await runTests({
       extensionDevelopmentPath,
       extensionTestsPath,
-      // Add Vitest CLI arguments
+      // Use Vitest for running tests
       launchArgs: [
-        '--disable-extensions',
-        '--disable-gpu',
-        '--disable-workspace-trust',
+        '--disable-extensions', // Disable all other extensions
+        '--disable-gpu', // Disable GPU hardware acceleration
+        '--disable-workspace-trust', // Disable workspace trust dialog
       ],
+      // Pass environment variables to configure Vitest
+      extensionTestsEnv: {
+        NODE_ENV: 'test',
+        VITEST: 'true',
+      },
     });
   } catch (error) {
     console.error('Failed to run tests:', error);

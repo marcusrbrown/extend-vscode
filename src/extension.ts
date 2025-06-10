@@ -1,30 +1,50 @@
 // The module 'vscode' contains the VS Code extensibility API
 // Import the module and reference it with the alias vscode in your code below
-import * as vscode from 'vscode';
+import type * as vscode from 'vscode';
+import {commands, registerCommands} from './commands';
+import {setupConfiguration} from './configuration';
+import {ExtensionController} from './core/ExtensionController';
+import {setupStatusBar} from './statusBar';
+import {setupTaskProvider} from './tasks';
+import {setupTelemetry} from './telemetry';
+import {setupTreeView} from './treeView';
+import {logger} from './utils/logger';
+import {setupWebviewProvider} from './webview';
+
+let controller: ExtensionController | undefined;
 
 // This method is called when your extension is activated
 // Your extension is activated the very first time the command is executed
-export function activate(context: vscode.ExtensionContext) {
-  // Use the console to output diagnostic information (console.log) and errors (console.error)
-  // This line of code will only be executed once when your extension is activated
-  console.log('Congratulations, your extension "extend-vscode" is now active!');
+export async function activate(context: vscode.ExtensionContext) {
+  try {
+    controller = new ExtensionController();
+    await controller.initialize(context);
 
-  // The command has been defined in the package.json file
-  // Now provide the implementation of the command with registerCommand
-  // The commandId parameter must match the command field in package.json
-  const disposable = vscode.commands.registerCommand(
-    'extend-vscode.webHello',
-    () => {
-      // The code you place here will be executed every time your command is executed
-      // Display a message box to the user
-      vscode.window.showInformationMessage('Hello from Web Extension!');
-    },
-  );
+    // Register core functionality
+    await Promise.all([
+      registerCommands(context, commands.webHello),
+      setupWebviewProvider(context),
+      setupConfiguration(context),
+      setupTelemetry(context),
+      setupStatusBar(context),
+      setupTreeView(context),
+      setupTaskProvider(context),
+    ]);
 
-  context.subscriptions.push(disposable);
+    logger.info('Extension successfully activated');
+  } catch (error) {
+    logger.error('Failed to activate extension', error);
+    throw error;
+  }
 }
 
 // This method is called when your extension is deactivated
-export function deactivate() {
-  console.log('deactivate');
+export async function deactivate() {
+  try {
+    await controller?.dispose();
+    logger.info('Extension successfully deactivated');
+  } catch (error) {
+    logger.error('Error during extension deactivation', error);
+    throw error;
+  }
 }

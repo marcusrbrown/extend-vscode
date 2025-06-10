@@ -6,7 +6,7 @@
     "lib": ["ESNext", "WebWorker"],
     "noEmit": true,
     "sourceMap": true,
-    "moduleResolution": "node",
+    "moduleResolution": "bundler",
     "esModuleInterop": true,
     "resolveJsonModule": true
   },
