@@ -1,0 +1,18 @@
+---
+_extends: .github:common-settings.yaml
+
+repository:
+  name: extend-vscode
+  description: Toolkit for developing VS Code extensions.
+  topics: [vscode, vscode-extension]
+
+branches:
+  - name: main
+    protection:
+      enforce_admins: true
+      required_linear_history: true
+      required_pull_request_reviews: null
+      required_status_checks:
+        strict: false
+        contexts: [Renovate / Renovate, Run Checks]
+      restrictions: null

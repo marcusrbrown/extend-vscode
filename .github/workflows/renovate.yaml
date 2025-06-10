@@ -8,7 +8,7 @@ on:
   pull_request:
     types: [edited]
   push:
-    branches: ['**']
+    branches-ignore: [main]
   workflow_dispatch:
     inputs:
       log-level:
@@ -24,11 +24,7 @@ on:
   workflow_run:
     branches: [main]
     types: [completed]
-    workflows: [CI]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.event.number || github.ref }}
-  cancel-in-progress: true
+    workflows: [Main]
 
 permissions:
   contents: read

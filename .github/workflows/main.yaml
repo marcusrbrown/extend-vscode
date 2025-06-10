@@ -1,10 +1,11 @@
-name: CI
+name: Main
 
 on:
   push:
     branches: [main]
   pull_request:
-    types: [opened, reopened, synchronize]
+    branches: [main]
+    types: [opened, ready_for_review, reopened, synchronize]
   workflow_dispatch:
 
 concurrency:
@@ -12,7 +13,8 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  ci:
+  check:
+    name: Run Checks
     runs-on: ubuntu-latest
 
     steps:
