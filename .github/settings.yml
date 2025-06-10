@@ -4,7 +4,7 @@ _extends: .github:common-settings.yaml
 repository:
   name: extend-vscode
   description: Toolkit for developing VS Code extensions.
-  topics: [vscode, vscode-extension]
+  topics: vscode, vscode-extension
 
 branches:
   - name: main
