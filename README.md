@@ -8,9 +8,21 @@
 ## Commands
 
 <!-- commands -->
+
+| Command                     | Title                                   |
+| --------------------------- | --------------------------------------- |
+| `extend-vscode.webHello`    | Extend VSCode: Hello from Web Extension |
+| `extend-vscode.showWebview` | Extend VSCode: Show Example Webview     |
+| `extend-vscode.refreshTree` | Extend VSCode: Refresh Example Tree     |
+
 <!-- commands -->
 
 ## Configuration
 
 <!-- configs -->
+
+| Key                      | Description                                         | Type     | Default  |
+| ------------------------ | --------------------------------------------------- | -------- | -------- |
+| `extend-vscode.logLevel` | The minimum log level to show in the output channel | `string` | `"info"` |
+
 <!-- configs -->
