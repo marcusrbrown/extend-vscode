@@ -170,7 +170,7 @@
     "typescript": "5.8.3",
     "typescript-eslint": "8.35.0",
     "vitest": "^3.0.6",
-    "vscode-ext-gen": "1.0.2"
+    "vscode-ext-gen": "1.1.0"
   },
   "pnpm": {
     "overrides": {
