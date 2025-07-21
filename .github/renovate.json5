@@ -6,7 +6,7 @@
     'github>sanity-io/renovate-config:semantic-commit-type',
     'github>sanity-io/renovate-config:security',
     'github>sanity-io/renovate-config:lock-file-maintenance',
-    'github>marcusrbrown/renovate-config#4.0.0',
+    'github>marcusrbrown/renovate-config#4.1.0',
   ],
   automergeType: 'pr',
   packageRules: [
