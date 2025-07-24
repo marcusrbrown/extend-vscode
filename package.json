@@ -101,7 +101,8 @@
       "explorer": [
         {
           "id": "extend-vscode.exampleTree",
-          "name": "Example Tree View"
+          "name": "Example Tree View",
+          "icon": "$(list-tree)"
         }
       ]
     },
