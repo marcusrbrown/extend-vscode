@@ -1,0 +1,45 @@
+# extend-vscode
+
+> A toolkit for developing VS Code extensions, providing utilities, components, and patterns for building robust extensions with features like commands, webviews, status bar integration, tree views, task providers, and telemetry.
+
+This project follows a modular architecture with a central ExtensionController managing the extension lifecycle. Each feature is organized into separate modules that can be imported and used independently. The toolkit supports both Node.js and web extension environments.
+
+## Documentation
+
+- [README](README.md): Project overview, available commands, and configuration options
+- [Package Manifest](package.json): Extension metadata, dependencies, activation events, and VS Code contribution points
+- [Changelog](CHANGELOG.md): Version history and notable changes
+
+## Core Implementation
+
+- [Extension Entry Point](src/extension.ts): Main activation function and extension lifecycle management
+- [Public API](src/index.ts): Exported modules and utilities for use by other extensions
+- [Extension Controller](src/core/ExtensionController.ts): Central controller managing extension state and cleanup
+- [Commands Module](src/commands/index.ts): Command registration and management utilities
+- [Configuration Module](src/configuration/index.ts): Settings and configuration management
+- [Logger Utility](src/utils/logger.ts): Centralized logging functionality
+
+## Configuration
+
+- [TypeScript Config](tsconfig.json): TypeScript compilation settings and target configuration
+- [Vitest Config](vitest.config.ts): Test configuration for Node.js environment
+- [Web Vitest Config](vitest.config.web.ts): Test configuration for web extension environment
+- [Build Config](tsup.config.ts): Build configuration for bundling the extension
+
+## Testing
+
+- [Extension Tests](test/extension.test.ts): Unit tests for the main extension functionality
+- [Integration Tests](test/integration/extension.test.ts): End-to-end extension testing
+- [Web Tests](test/web/webview.test.ts): Tests for web extension components
+- [Test Setup](test/setup.ts): Test environment configuration and mocks
+
+## Optional
+
+- [Generated Metadata](src/generated/meta.ts): Auto-generated types and constants from package.json
+- [Status Bar Module](src/statusBar/index.ts): Status bar integration utilities
+- [Tree View Module](src/treeView/index.ts): Tree view provider utilities
+- [Webview Module](src/webview/index.ts): Webview creation and management utilities
+- [Task Provider Module](src/tasks/index.ts): Custom task provider implementation
+- [Telemetry Module](src/telemetry/index.ts): Usage analytics and telemetry collection
+- [ESLint Config](eslint.config.ts): Code quality and style enforcement rules
+- [License](LICENSE.md): MIT license terms and conditions
