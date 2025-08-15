@@ -4,3 +4,5 @@
 *.zip binary
 
 *.json text linguist-language=JSON-with-comments
+
+llms.txt text linguist-language=Markdown
