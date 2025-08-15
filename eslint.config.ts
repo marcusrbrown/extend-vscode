@@ -3,7 +3,7 @@ import {defineConfig} from '@bfra.me/eslint-config';
 export default defineConfig(
   {
     name: 'extend-vscode',
-    ignores: ['out', '.vscode-test'],
+    ignores: ['.ai/', '.github/copilot-instructions.md', 'out', '.vscode-test'],
     packageJson: true,
     typescript: {
       tsconfigPath: './tsconfig.json',
