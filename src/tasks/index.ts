@@ -19,8 +19,8 @@ export interface BaseTaskDefinition extends vscode.TaskDefinition {
 export abstract class TaskProvider<T extends BaseTaskDefinition>
   implements vscode.TaskProvider
 {
-  private tasks = new Map<string, vscode.Task>();
   protected readonly type: string;
+  private readonly tasks = new Map<string, vscode.Task>();
 
   constructor(type: string) {
     this.type = type;
@@ -72,9 +72,10 @@ export abstract class TaskProvider<T extends BaseTaskDefinition>
         execution,
       );
 
-      const taskGroup = definition.group
-        ? this.getTaskGroup(definition.group)
-        : undefined;
+      const taskGroup =
+        typeof definition.group === 'string' && definition.group.length > 0
+          ? this.getTaskGroup(definition.group)
+          : undefined;
       if (taskGroup) {
         task.group = taskGroup;
       }

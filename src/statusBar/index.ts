@@ -25,7 +25,7 @@ export interface StatusBarItemOptions {
  * Status bar item manager
  */
 export class StatusBarItem {
-  private item: vscode.StatusBarItem;
+  private readonly item: vscode.StatusBarItem;
 
   constructor(options: StatusBarItemOptions = {}) {
     this.item = vscode.window.createStatusBarItem(
@@ -33,13 +33,13 @@ export class StatusBarItem {
       options.priority,
     );
 
-    if (options.command) {
+    if (typeof options.command === 'string' && options.command.length > 0) {
       this.item.command = options.command;
     }
-    if (options.text) {
+    if (typeof options.text === 'string' && options.text.length > 0) {
       this.item.text = options.text;
     }
-    if (options.tooltip) {
+    if (typeof options.tooltip === 'string' && options.tooltip.length > 0) {
       this.item.tooltip = options.tooltip;
     }
     if (options.backgroundColor) {
@@ -111,7 +111,7 @@ export class StatusBarItem {
  * Status bar manager that handles multiple status bar items
  */
 export class StatusBarManager {
-  private items = new Map<string, StatusBarItem>();
+  private readonly items = new Map<string, StatusBarItem>();
 
   /**
    * Create a new status bar item

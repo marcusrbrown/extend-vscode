@@ -30,8 +30,8 @@ const DEFAULT_OPTIONS: Required<LoggerOptions> = {
  * Logger class that provides consistent logging across the extension
  */
 class Logger {
-  private outputChannel: vscode.OutputChannel;
-  private options: Required<LoggerOptions>;
+  private readonly outputChannel: vscode.OutputChannel;
+  private readonly options: Required<LoggerOptions>;
 
   constructor(options: LoggerOptions = {}) {
     this.options = {...DEFAULT_OPTIONS, ...options};
@@ -67,7 +67,7 @@ class Logger {
   error(message: string | Error, ...args: unknown[]): void {
     if (message instanceof Error) {
       this.log('error', message.message, ...args);
-      if (message.stack) {
+      if (typeof message.stack === 'string' && message.stack.length > 0) {
         this.log('error', message.stack);
       }
     } else {

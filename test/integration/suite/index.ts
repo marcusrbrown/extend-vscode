@@ -2,14 +2,18 @@ import {beforeAll} from 'vitest';
 import * as vscode from 'vscode';
 
 beforeAll(() => {
-  vscode.window.showInformationMessage('Starting integration tests.');
+  if (typeof vscode.window.showInformationMessage === 'function') {
+    vscode.window.showInformationMessage('Starting integration tests.');
+  }
 });
 
-// Import all integration test files
-/*const integrationTests = */ Object.values(
-  // @ts-expect-error - Vite's import.meta.glob is not recognized by TypeScript
-  import.meta.glob('./**/*.test.ts', {eager: true}),
-);
+// Import all integration test files using proper typing
+const globResult = import.meta.glob<Record<string, unknown>>('./**/*.test.ts', {
+  eager: true,
+});
+
+// Consume the glob result to ensure test files are loaded
+Object.values(globResult);
 
 // Export run function for VS Code test runner
 export async function run(): Promise<void> {

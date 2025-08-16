@@ -178,7 +178,8 @@
       "jiti": "<2.5.0"
     },
     "onlyBuiltDependencies": [
-      "esbuild"
+      "esbuild",
+      "eslint-plugin-node-dependencies"
     ]
   }
 }

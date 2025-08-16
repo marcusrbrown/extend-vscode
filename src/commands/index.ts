@@ -1,14 +1,10 @@
 import * as vscode from 'vscode';
 import {logger} from '../utils/logger';
 
-/**
- * Command handler function type
- */
-export type CommandHandler = (...args: any[]) => any;
+/** Command handler function type */
+export type CommandHandler = (...args: unknown[]) => Promise<unknown> | unknown;
 
-/**
- * Command registration options
- */
+/** Command registration options */
 export interface CommandRegistration {
   /** Command identifier */
   command: string;
@@ -20,9 +16,7 @@ export interface CommandRegistration {
   category?: string;
 }
 
-/**
- * Register multiple commands with error handling and logging
- */
+/** Register multiple commands with error handling and logging */
 export async function registerCommands(
   context: vscode.ExtensionContext,
   ...commands: CommandRegistration[]
@@ -31,7 +25,7 @@ export async function registerCommands(
     try {
       const disposable = vscode.commands.registerCommand(
         command,
-        async (...args) => {
+        async (...args: unknown[]) => {
           try {
             await handler(...args);
           } catch (error) {
@@ -44,9 +38,11 @@ export async function registerCommands(
       context.subscriptions.push(disposable);
       logger.debug(`Registered command: ${command}`);
 
-      // Register command metadata if title is provided
-      if (title) {
-        const commandTitle = category ? `${category}: ${title}` : title;
+      if (typeof title === 'string' && title.length > 0) {
+        const commandTitle =
+          typeof category === 'string' && category.length > 0
+            ? `${category}: ${title}`
+            : title;
         await vscode.commands.executeCommand(
           'setContext',
           `${command}.title`,
@@ -60,13 +56,11 @@ export async function registerCommands(
   }
 }
 
-/**
- * Create a command registration object
- */
+/** Create a command registration object */
 export function createCommand(
   command: string,
   handler: CommandHandler,
-  options: {title?: string; category?: string} = {},
+  options: Partial<Pick<CommandRegistration, 'title' | 'category'>> = {},
 ): CommandRegistration {
   return {
     command,
@@ -75,9 +69,7 @@ export function createCommand(
   };
 }
 
-/**
- * Example command registrations
- */
+/** Example command registrations */
 export const commands = {
   webHello: createCommand(
     'extend-vscode.webHello',

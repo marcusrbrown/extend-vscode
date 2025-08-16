@@ -103,7 +103,7 @@ export class ConfigurationSection<T> {
  * Configuration manager that handles multiple configuration sections
  */
 export class ConfigurationManager {
-  private sections = new Map<string, ConfigurationSection<any>>();
+  private readonly sections = new Map<string, ConfigurationSection<any>>();
 
   /**
    * Create a new configuration section
