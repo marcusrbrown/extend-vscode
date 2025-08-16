@@ -1,7 +1,8 @@
+import type {MockVSCode} from '../../types/mock-vscode';
 import {vi} from 'vitest';
 
-// Create a more comprehensive VS Code mock
-const createMockVSCode = () => ({
+// Create a more comprehensive VS Code mock with proper typing
+const createMockVSCode = (): MockVSCode => ({
   version: '1.85.0',
   env: {
     machineId: 'test-machine-id',
@@ -24,26 +25,21 @@ const createMockVSCode = () => ({
       show: vi.fn(),
       dispose: vi.fn(),
     })),
-    createWebviewPanel: vi.fn(() => {
-      const panel = {
-        webview: {
-          html: '',
-          onDidReceiveMessage: vi.fn((callback) => ({
-            dispose: vi.fn(),
-            _callback: callback,
-          })),
-          postMessage: vi.fn(),
-          asWebviewUri: vi.fn((uri) => uri),
-        },
-        onDidDispose: vi.fn((callback) => ({
+    createWebviewPanel: vi.fn(() => ({
+      webview: {
+        html: '',
+        onDidReceiveMessage: vi.fn(() => ({
           dispose: vi.fn(),
-          _callback: callback,
         })),
+        postMessage: vi.fn(),
+        asWebviewUri: vi.fn(),
+      },
+      onDidDispose: vi.fn(() => ({
         dispose: vi.fn(),
-        reveal: vi.fn(),
-      };
-      return panel;
-    }),
+      })),
+      dispose: vi.fn(),
+      reveal: vi.fn(),
+    })),
     createStatusBarItem: vi.fn((alignment?: number, priority?: number) => ({
       text: '',
       tooltip: '',
@@ -107,9 +103,15 @@ const createMockVSCode = () => ({
     One: 1,
     Two: 2,
     Three: 3,
+    Four: 4,
+    Five: 5,
+    Six: 6,
+    Seven: 7,
+    Eight: 8,
+    Nine: 9,
     Active: -1,
     Beside: -2,
-  },
+  } as const,
 });
 
 const vscode = createMockVSCode();

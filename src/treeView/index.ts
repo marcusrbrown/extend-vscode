@@ -25,8 +25,14 @@ export interface TreeItemData {
 export abstract class TreeDataProvider<T extends TreeItemData>
   implements vscode.TreeDataProvider<T>
 {
-  private _onDidChangeTreeData = new vscode.EventEmitter<T | undefined>();
-  readonly onDidChangeTreeData = this._onDidChangeTreeData.event;
+  readonly onDidChangeTreeData: vscode.Event<T | undefined>;
+  private readonly _onDidChangeTreeData = new vscode.EventEmitter<
+    T | undefined
+  >();
+
+  constructor() {
+    this.onDidChangeTreeData = this._onDidChangeTreeData.event;
+  }
 
   /**
    * Get the tree item for the given element
@@ -37,16 +43,22 @@ export abstract class TreeDataProvider<T extends TreeItemData>
       this.getCollapsibleState(element),
     );
 
-    if (element.description) {
+    if (
+      typeof element.description === 'string' &&
+      element.description.length > 0
+    ) {
       treeItem.description = element.description;
     }
-    if (element.tooltip) {
+    if (typeof element.tooltip === 'string' && element.tooltip.length > 0) {
       treeItem.tooltip = element.tooltip;
     }
     if (element.command) {
       treeItem.command = element.command;
     }
-    if (element.contextValue) {
+    if (
+      typeof element.contextValue === 'string' &&
+      element.contextValue.length > 0
+    ) {
       treeItem.contextValue = element.contextValue;
     }
 
@@ -92,7 +104,7 @@ export interface ExampleTreeItem extends TreeItemData {
  * Example tree data provider implementation
  */
 export class ExampleTreeProvider extends TreeDataProvider<ExampleTreeItem> {
-  private items: ExampleTreeItem[] = [
+  private readonly items: ExampleTreeItem[] = [
     {
       id: '1',
       label: 'Parent',
@@ -116,19 +128,19 @@ export class ExampleTreeProvider extends TreeDataProvider<ExampleTreeItem> {
     },
   ];
 
+  async getChildren(element?: ExampleTreeItem): Promise<ExampleTreeItem[]> {
+    if (!element) {
+      return this.items.filter((item) => !item.id.includes('.'));
+    }
+    return this.items.filter((item) => item.id.startsWith(`${element.id}.`));
+  }
+
   protected override getCollapsibleState(
     element: ExampleTreeItem,
   ): vscode.TreeItemCollapsibleState {
     return element.hasChildren
       ? vscode.TreeItemCollapsibleState.Expanded
       : vscode.TreeItemCollapsibleState.None;
-  }
-
-  async getChildren(element?: ExampleTreeItem): Promise<ExampleTreeItem[]> {
-    if (!element) {
-      return this.items.filter((item) => !item.id.includes('.'));
-    }
-    return this.items.filter((item) => item.id.startsWith(`${element.id}.`));
   }
 }
 

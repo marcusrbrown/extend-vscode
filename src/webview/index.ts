@@ -45,18 +45,6 @@ export abstract class WebviewPanel<
   }
 
   /**
-   * Get the webview's HTML content
-   */
-  protected abstract getHtmlContent(): string;
-
-  /**
-   * Post a message to the webview
-   */
-  protected postMessage(message: unknown): Thenable<boolean> {
-    return this.panel.webview.postMessage(message);
-  }
-
-  /**
    * Reveal the webview panel
    */
   reveal(column?: vscode.ViewColumn): void {
@@ -68,8 +56,22 @@ export abstract class WebviewPanel<
    */
   dispose(): void {
     this.panel.dispose();
-    this.disposables.forEach((d) => d.dispose());
+    this.disposables.forEach((d) => {
+      d.dispose();
+    });
     this.disposables = [];
+  }
+
+  /**
+   * Get the webview's HTML content
+   */
+  protected abstract getHtmlContent(): string;
+
+  /**
+   * Post a message to the webview
+   */
+  protected postMessage(message: unknown): Thenable<boolean> {
+    return this.panel.webview.postMessage(message);
   }
 
   private createWebviewPanel(): vscode.WebviewPanel {

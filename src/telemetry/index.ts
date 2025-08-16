@@ -27,11 +27,11 @@ export interface TelemetryEvent<
  */
 export interface TelemetryReporter {
   /** Send a telemetry event */
-  sendTelemetryEvent<T extends TelemetryEventData>(
+  sendTelemetryEvent: <T extends TelemetryEventData>(
     event: TelemetryEvent<T>,
-  ): void;
+  ) => void;
   /** Flush pending data and dispose */
-  dispose(): void | Promise<void>;
+  dispose: () => void | Promise<void>;
 }
 
 /**
@@ -57,7 +57,7 @@ export class ConsoleTelemetryReporter implements TelemetryReporter {
  * Telemetry manager that handles sending events
  */
 export class TelemetryManager {
-  private reporter: TelemetryReporter;
+  private readonly reporter: TelemetryReporter;
   private commonProperties: TelemetryEventData = {};
 
   constructor(reporter: TelemetryReporter) {
@@ -123,7 +123,9 @@ export function setupTelemetry(
 
     // Set common properties
     manager.setCommonProperties({
-      extensionVersion: context.extension.packageJSON.version,
+      extensionVersion:
+        (context.extension.packageJSON as {version?: string}).version ??
+        'unknown',
       vscodeVersion: vscode.version,
       machineId: vscode.env.machineId,
       sessionId: `${context.extension.id}_${Date.now()}`,

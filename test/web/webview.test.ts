@@ -1,4 +1,5 @@
 import type * as vscodeTypes from 'vscode';
+import type {MockWebviewPanel} from '../../types/mock-vscode';
 import {afterEach, beforeEach, describe, expect, test, vi} from 'vitest';
 import {HelloWebview} from '../../src/webview';
 import {mockVscode, resetAllMocks} from '../setup';
@@ -6,7 +7,7 @@ import {mockVscode, resetAllMocks} from '../setup';
 describe('HelloWebview', () => {
   let context: vscodeTypes.ExtensionContext;
   let webview: HelloWebview;
-  let panel: ReturnType<typeof mockVscode.window.createWebviewPanel>;
+  let panel: MockWebviewPanel;
 
   beforeEach(async () => {
     resetAllMocks();
@@ -14,7 +15,7 @@ describe('HelloWebview', () => {
       mockVscode.ExtensionContext() as unknown as vscodeTypes.ExtensionContext;
 
     // Create panel and capture handlers
-    panel = mockVscode.window.createWebviewPanel();
+    panel = mockVscode.window.createWebviewPanel() as MockWebviewPanel;
     vi.mocked(mockVscode.window.createWebviewPanel).mockReturnValue(panel);
 
     // Initialize webview
@@ -28,7 +29,7 @@ describe('HelloWebview', () => {
   });
 
   afterEach(() => {
-    if (webview) {
+    if (webview !== null && webview !== undefined) {
       webview.dispose();
     }
     vi.clearAllMocks();
@@ -38,6 +39,7 @@ describe('HelloWebview', () => {
     expect(mockVscode.window.createWebviewPanel).toHaveBeenCalledWith(
       'test.helloWebview',
       'Test Webview',
+
       mockVscode.ViewColumn.One,
       expect.objectContaining({
         enableScripts: true,
@@ -48,9 +50,11 @@ describe('HelloWebview', () => {
 
   test('HTML content includes necessary elements and scripts', () => {
     expect(panel.webview.html).toContain('<title>Hello Webview</title>');
+
     expect(panel.webview.html).toContain(
       '<button id="sendMessage">Send Message</button>',
     );
+
     expect(panel.webview.html).toContain('acquireVsCodeApi()');
   });
 
@@ -70,7 +74,7 @@ describe('HelloWebview', () => {
     // Get the message handler from the new webview's registration
     const mockCalls = vi.mocked(panel.webview.onDidReceiveMessage).mock.calls;
     expect(mockCalls.length).toBeGreaterThan(1);
-    const messageHandler = mockCalls[1]![0] as (message: any) => Promise<void>;
+    const messageHandler = mockCalls[1]?.[0] as (message: any) => Promise<void>;
 
     // Simulate message from webview
     await messageHandler({type: 'hello'});
@@ -94,12 +98,13 @@ describe('HelloWebview', () => {
     // Get the dispose handler from the new webview's registration
     const mockCalls = vi.mocked(panel.onDidDispose).mock.calls;
     expect(mockCalls.length).toBeGreaterThan(1);
-    const disposeHandler = mockCalls[1]![0] as () => Promise<void>;
+    const disposeHandler = mockCalls[1]?.[0] as () => Promise<void>;
 
     // Simulate panel disposal
     await disposeHandler();
 
     expect(onDisposeMock).toHaveBeenCalled();
+
     expect(panel.dispose).toHaveBeenCalled();
   });
 });

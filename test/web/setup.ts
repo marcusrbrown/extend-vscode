@@ -15,7 +15,10 @@ const mockAcquireVsCodeApi = vi.fn(() => ({
 }));
 
 // Add to global scope
-(globalThis as any).acquireVsCodeApi = mockAcquireVsCodeApi;
+if (typeof globalThis === 'object' && globalThis !== null) {
+  (globalThis as Record<string, unknown>).acquireVsCodeApi =
+    mockAcquireVsCodeApi;
+}
 
 // Mock WebWorker
 class MockWorker {
@@ -24,7 +27,9 @@ class MockWorker {
   terminate = vi.fn();
 }
 
-(globalThis as any).Worker = MockWorker;
+if (typeof globalThis === 'object' && globalThis !== null) {
+  (globalThis as Record<string, unknown>).Worker = MockWorker;
+}
 
 // Helper to reset all mocks between tests
 export const resetAllMocks = () => {
@@ -32,9 +37,13 @@ export const resetAllMocks = () => {
   mockAcquireVsCodeApi.mockClear();
   Object.values(mockVscode).forEach((value) => {
     if (typeof value === 'object' && value !== null) {
-      Object.values(value).forEach((fn) => {
-        if (typeof fn === 'function' && 'mockReset' in fn) {
-          fn.mockReset();
+      Object.values(value as Record<string, unknown>).forEach((fn) => {
+        if (
+          typeof fn === 'function' &&
+          'mockReset' in fn &&
+          typeof fn.mockReset === 'function'
+        ) {
+          (fn.mockReset as () => void)();
         }
       });
     }
