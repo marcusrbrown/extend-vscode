@@ -54,9 +54,9 @@
       "default": "./out/node/webview/index.js"
     },
     "./treeView": {
-      "types": "./out/types/treeView/index.d.ts",
-      "browser": "./out/web/treeView/index.js",
-      "default": "./out/node/treeView/index.js"
+      "types": "./out/types/tree-view/index.d.ts",
+      "browser": "./out/web/tree-view/index.js",
+      "default": "./out/node/tree-view/index.js"
     },
     "./tasks": {
       "types": "./out/types/tasks/index.d.ts",
@@ -64,9 +64,9 @@
       "default": "./out/node/tasks/index.js"
     },
     "./statusBar": {
-      "types": "./out/types/statusBar/index.d.ts",
-      "browser": "./out/web/statusBar/index.js",
-      "default": "./out/node/statusBar/index.js"
+      "types": "./out/types/status-bar/index.d.ts",
+      "browser": "./out/web/status-bar/index.js",
+      "default": "./out/node/status-bar/index.js"
     },
     "./telemetry": {
       "types": "./out/types/telemetry/index.d.ts",
