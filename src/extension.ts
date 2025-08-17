@@ -3,11 +3,11 @@
 import type * as vscode from 'vscode';
 import {commands, registerCommands} from './commands';
 import {setupConfiguration} from './configuration';
-import {ExtensionController} from './core/ExtensionController';
-import {setupStatusBar} from './statusBar';
+import {ExtensionController} from './core/extension-controller';
+import {setupStatusBar} from './status-bar';
 import {setupTaskProvider} from './tasks';
 import {setupTelemetry} from './telemetry';
-import {setupTreeView} from './treeView';
+import {setupTreeView} from './tree-view';
 import {logger} from './utils/logger';
 import {setupWebviewProvider} from './webview';
 
