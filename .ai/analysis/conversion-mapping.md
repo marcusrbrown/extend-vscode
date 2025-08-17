@@ -1,6 +1,6 @@
 # Kebab-Case Conversion Mapping
 
-**Created**: 2025-08-16  
+**Created**: 2025-08-16
 **Purpose**: Detailed mapping for automated file and directory renaming
 
 ## File Mapping Configuration
@@ -33,7 +33,7 @@
     {
       "from": "src/treeView",
       "to": "src/tree-view",
-      "type": "directory", 
+      "type": "directory",
       "priority": 1,
       "files": [
         {
@@ -80,7 +80,7 @@ declare -A FILE_MAPPINGS=(
   ["src/core/ExtensionController.ts"]="src/core/extension-controller.ts"
 )
 
-# Directory mappings  
+# Directory mappings
 declare -A DIR_MAPPINGS=(
   ["src/statusBar"]="src/status-bar"
   ["src/treeView"]="src/tree-view"
@@ -114,7 +114,7 @@ const conversionConfig = {
       recursive: true
     },
     {
-      from: "src/treeView", 
+      from: "src/treeView",
       to: "src/tree-view",
       recursive: true
     }

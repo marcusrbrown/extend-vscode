@@ -1,6 +1,6 @@
 # Import Dependency Analysis
 
-**Created**: 2025-08-16  
+**Created**: 2025-08-16
 **Purpose**: Comprehensive analysis of import statements affected by kebab-case conversion
 
 ## Files with Import Dependencies
@@ -99,7 +99,7 @@ const importPatterns = [
     replacement: "from './core/extension-controller'"
   },
   {
-    // statusBar imports  
+    // statusBar imports
     pattern: /from\s+['"]\.\/statusBar['"]/g,
     replacement: "from './status-bar'"
   },
@@ -140,7 +140,7 @@ const importPatterns = [
 - Expected: Standard imports from vscode, utils, etc.
 - **Action**: Verify no internal imports of renamed files
 
-#### src/treeView/index.ts  
+#### src/treeView/index.ts
 - Expected: Standard imports from vscode, utils, etc.
 - **Action**: Verify no internal imports of renamed files
 
