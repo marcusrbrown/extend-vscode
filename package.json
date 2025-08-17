@@ -3,6 +3,7 @@
   "displayName": "Toolkit for building VS Code extensions.",
   "description": "Toolkit for building VS Code extensions.",
   "version": "0.1.0",
+  "types": "./out/node/index.d.ts",
   "author": "Marcus R. Brown <contact@marcusrbrown.com>",
   "publisher": "marcusrbrown",
   "license": "MIT",
@@ -13,7 +14,14 @@
   "bugs": {
     "url": "https://github.com/marcusrbrown/extend-vscode/issues"
   },
+  "homepage": "https://github.com/marcusrbrown/extend-vscode#readme",
   "packageManager": "pnpm@10.14.0",
+  "files": [
+    "out/",
+    "LICENSE.md",
+    "README.md",
+    "CHANGELOG.md"
+  ],
   "engines": {
     "vscode": "^1.102.0"
   },
@@ -34,48 +42,39 @@
   "browser": "./out/web/extension.js",
   "exports": {
     ".": {
-      "types": "./out/types/index.d.ts",
-      "browser": "./out/web/index.js",
+      "types": "./out/node/index.d.ts",
       "default": "./out/node/index.js"
     },
     "./commands": {
-      "types": "./out/types/commands/index.d.ts",
-      "browser": "./out/web/commands/index.js",
+      "types": "./out/node/commands/index.d.ts",
       "default": "./out/node/commands/index.js"
     },
     "./configuration": {
-      "types": "./out/types/configuration/index.d.ts",
-      "browser": "./out/web/configuration/index.js",
+      "types": "./out/node/configuration/index.d.ts",
       "default": "./out/node/configuration/index.js"
     },
     "./webview": {
-      "types": "./out/types/webview/index.d.ts",
-      "browser": "./out/web/webview/index.js",
+      "types": "./out/node/webview/index.d.ts",
       "default": "./out/node/webview/index.js"
     },
     "./treeView": {
-      "types": "./out/types/tree-view/index.d.ts",
-      "browser": "./out/web/tree-view/index.js",
+      "types": "./out/node/tree-view/index.d.ts",
       "default": "./out/node/tree-view/index.js"
     },
     "./tasks": {
-      "types": "./out/types/tasks/index.d.ts",
-      "browser": "./out/web/tasks/index.js",
+      "types": "./out/node/tasks/index.d.ts",
       "default": "./out/node/tasks/index.js"
     },
     "./statusBar": {
-      "types": "./out/types/status-bar/index.d.ts",
-      "browser": "./out/web/status-bar/index.js",
+      "types": "./out/node/status-bar/index.d.ts",
       "default": "./out/node/status-bar/index.js"
     },
     "./telemetry": {
-      "types": "./out/types/telemetry/index.d.ts",
-      "browser": "./out/web/telemetry/index.js",
+      "types": "./out/node/telemetry/index.d.ts",
       "default": "./out/node/telemetry/index.js"
     },
     "./utils": {
-      "types": "./out/types/utils/index.d.ts",
-      "browser": "./out/web/utils/index.js",
+      "types": "./out/node/utils/index.d.ts",
       "default": "./out/node/utils/index.js"
     }
   },
