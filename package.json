@@ -15,7 +15,7 @@
   },
   "packageManager": "pnpm@10.14.0",
   "engines": {
-    "vscode": "^1.71.0"
+    "vscode": "^1.102.0"
   },
   "categories": [
     "Programming Languages",
@@ -142,7 +142,13 @@
     "test:web": "vitest run -c vitest.config.web.ts",
     "test:web:watch": "vitest -c vitest.config.web.ts",
     "test:web:coverage": "vitest run -c vitest.config.web.ts --coverage",
-    "type-check": "tsc --noEmit"
+    "type-check": "tsc --noEmit",
+    "vsce:package": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && vsce package --no-dependencies",
+    "vsce:publish": "pnpm run vsce:package && vsce publish",
+    "ovsx:publish": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && ovsx publish -p $OVSX_TOKEN",
+    "npm:publish": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && pnpm publish",
+    "publish:all": "pnpm run vsce:publish && pnpm run ovsx:publish && pnpm run npm:publish",
+    "publish:dry-run": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && vsce package --no-dependencies --out test.vsix && echo 'Dry run: Would publish to VS Code Marketplace' && echo 'Dry run: Would publish to OpenVSIX with ovsx publish -p $OVSX_TOKEN' && echo 'Dry run: Would publish to npm with pnpm publish --dry-run' && pnpm publish --dry-run && rm -f test.vsix"
   },
   "devDependencies": {
     "@bfra.me/eslint-config": "0.26.0",
@@ -166,6 +172,7 @@
     "eslint-plugin-prettier": "5.5.0",
     "jiti": "<2.5.0",
     "jsdom": "26.1.0",
+    "ovsx": "0.10.5",
     "prettier": "3.6.0",
     "tsup": "^8.0.2",
     "tsx": "4.20.0",
