@@ -148,6 +148,10 @@
     "npm:publish": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && pnpm publish",
     "publish:all": "pnpm run vsce:publish && pnpm run ovsx:publish && pnpm run npm:publish",
     "publish:dry-run": "pnpm run lint && pnpm run type-check && pnpm run test && pnpm run test:web && pnpm run build && vsce package --no-dependencies --out test.vsix && echo 'Dry run: Would publish to VS Code Marketplace' && echo 'Dry run: Would publish to OpenVSIX with ovsx publish -p $OVSX_TOKEN' && echo 'Dry run: Would publish to npm with pnpm publish --dry-run' && pnpm publish --dry-run && rm -f test.vsix",
+    "rollback": "tsx scripts/rollback.ts",
+    "rollback:emergency": "tsx scripts/rollback.ts --emergency",
+    "validate:tokens": "tsx scripts/validate-tokens.ts",
+    "validate:publish": "tsx scripts/publish-utils.ts",
     "semantic-release": "semantic-release",
     "semantic-release:dry-run": "semantic-release --dry-run"
   },
@@ -181,6 +185,7 @@
     "semantic-release-vsce": "6.0.11",
     "tsup": "^8.0.2",
     "tsx": "4.20.0",
+    "type-fest": "4.41.0",
     "typescript": "5.8.3",
     "typescript-eslint": "8.39.0",
     "vitest": "^3.0.6",

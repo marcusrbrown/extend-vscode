@@ -59,7 +59,17 @@ jobs:
     strategy:
       fail-fast: true
       matrix:
-        validation: [lint, test, test-web, build]
+        validation:
+          - lint
+          - test
+          - test-web
+          - build
+          - bundle-size
+          - manifest
+          - dual-target
+          - integration
+          - vulnerabilities
+
     steps:
       - name: Checkout
         uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
@@ -93,6 +103,32 @@ jobs:
       - name: Build
         if: matrix.validation == 'build'
         run: pnpm build
+
+      - name: Validate bundle size
+        if: matrix.validation == 'bundle-size'
+        run: |
+          pnpm build
+          tsx scripts/publish-utils.ts --bundle-size-only
+
+      - name: Validate manifest
+        if: matrix.validation == 'manifest'
+        run: tsx scripts/publish-utils.ts --manifest-only
+
+      - name: Validate dual-target build
+        if: matrix.validation == 'dual-target'
+        run: |
+          pnpm build
+          tsx scripts/publish-utils.ts --dual-target-only
+
+      - name: Run integration tests
+        if: matrix.validation == 'integration'
+        run: |
+          pnpm build
+          tsx scripts/publish-utils.ts --integration-only
+
+      - name: Scan vulnerabilities
+        if: matrix.validation == 'vulnerabilities'
+        run: tsx scripts/publish-utils.ts --vulnerabilities-only
 
       - name: Upload build artifacts
         if: matrix.validation == 'build'

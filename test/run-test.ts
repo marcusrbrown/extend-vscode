@@ -10,7 +10,7 @@ async function main() {
     // The path to the integration test runner
     const extensionTestsPath = path.resolve(
       __dirname,
-      './integration/suite/index',
+      './integration/suite/index.js',
     );
 
     // Download VS Code, unzip it and run the integration test
