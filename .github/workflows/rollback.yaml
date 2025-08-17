@@ -1,0 +1,110 @@
+name: Emergency Rollback
+
+on:
+  workflow_dispatch:
+    inputs:
+      version:
+        description: 'Version to rollback (e.g., 1.0.1)'
+        required: true
+        type: string
+      platforms:
+        description: Platforms to rollback from
+        required: true
+        default: all
+        type: choice
+        options:
+          - all
+          - npm-only
+          - marketplace-only
+          - github-only
+      confirm:
+        description: Type "CONFIRM" to proceed with rollback
+        required: true
+        type: string
+
+env:
+  NODE_VERSION_FILE: .node-version
+
+jobs:
+  validate-rollback:
+    name: Validate Rollback Request
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validate confirmation
+        run: |
+          if [ "${{ github.event.inputs.confirm }}" != "CONFIRM" ]; then
+            echo "❌ Rollback not confirmed. Please type 'CONFIRM' to proceed."
+            exit 1
+          fi
+          echo "✅ Rollback confirmed for version ${{ github.event.inputs.version }}"
+
+  rollback:
+    name: Execute Rollback
+    runs-on: ubuntu-latest
+    needs: validate-rollback
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          cache: pnpm
+          node-version-file: ${{ env.NODE_VERSION_FILE }}
+
+      - name: Install dependencies
+        run: pnpm bootstrap
+
+      - name: Emergency rollback (all platforms)
+        if: github.event.inputs.platforms == 'all'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: tsx scripts/rollback.ts --emergency --version=${{ github.event.inputs.version }}
+
+      - name: Rollback npm only
+        if: github.event.inputs.platforms == 'npm-only'
+        env:
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: tsx scripts/rollback.ts --npm --version=${{ github.event.inputs.version }}
+
+      - name: Rollback marketplace only
+        if: github.event.inputs.platforms == 'marketplace-only'
+        run: tsx scripts/rollback.ts --marketplace --version=${{ github.event.inputs.version }}
+
+      - name: Rollback GitHub release only
+        if: github.event.inputs.platforms == 'github-only'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: tsx scripts/rollback.ts --tag=v${{ github.event.inputs.version }}
+
+      - name: Create rollback issue
+        if: always()
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          gh issue create \
+            --title "🚨 Emergency Rollback: v${{ github.event.inputs.version }}" \
+            --label "rollback,urgent" \
+            --body "## Rollback Summary
+
+          **Version:** ${{ github.event.inputs.version }}
+          **Platforms:** ${{ github.event.inputs.platforms }}
+          **Triggered by:** @${{ github.actor }}
+          **Workflow:** ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+          ### Next Steps
+          - [ ] Review rollback results
+          - [ ] Identify and fix root cause
+          - [ ] Update documentation
+          - [ ] Plan hotfix release if needed
+          - [ ] Notify users of any impacts
+
+          ### Manual Actions Required
+          Please check the workflow logs for any manual rollback instructions."
