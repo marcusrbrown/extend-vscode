@@ -98,7 +98,7 @@ This implementation plan details the creation of a VS Code explorer context menu
 - **DEP-004**: Node.js `fs` and `path` modules for file system operations (Node.js environment only)
 - **DEP-005**: Existing command registration system from `src/commands/index.ts`
 - **DEP-006**: Logger utility from `src/utils/logger.ts`
-- **DEP-007**: ExtensionController from `src/core/ExtensionController.ts`
+- **DEP-007**: ExtensionController from `src/core/extension-controller.ts`
 
 ## 5. Files
 
@@ -143,4 +143,4 @@ This implementation plan details the creation of a VS Code explorer context menu
 - [VS Code Extension Guidelines](https://code.visualstudio.com/api/references/extension-guidelines)
 - [extend-vscode Copilot Instructions](../../.github/copilot-instructions.md)
 - [Existing Commands Module](../../src/commands/index.ts)
-- [Extension Controller Pattern](../../src/core/ExtensionController.ts)
+- [Extension Controller Pattern](../../src/core/extension-controller.ts)

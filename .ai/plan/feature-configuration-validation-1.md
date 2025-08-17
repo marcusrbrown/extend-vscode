@@ -94,7 +94,7 @@ This implementation plan details the creation of a real-time configuration valid
 - **DEP-001**: VS Code API `vscode.workspace.onDidChangeConfiguration` for configuration watching
 - **DEP-002**: Generated types from `src/generated/meta.ts` (ConfigKey, ConfigKeyTypeMap)
 - **DEP-003**: Existing logger utility from `src/utils/logger.ts`
-- **DEP-004**: ExtensionController from `src/core/ExtensionController.ts` for disposal management
+- **DEP-004**: ExtensionController from `src/core/extension-controller.ts` for disposal management
 - **DEP-005**: VS Code API `vscode.window.showWarningMessage` for notifications
 - **DEP-006**: Existing configuration module patterns from `src/configuration/index.ts`
 
@@ -139,4 +139,4 @@ This implementation plan details the creation of a real-time configuration valid
 - [extend-vscode Copilot Instructions](../../.github/copilot-instructions.md)
 - [Existing Configuration Module](../../src/configuration/index.ts)
 - [Generated Metadata Types](../../src/generated/meta.ts)
-- [Extension Controller Pattern](../../src/core/ExtensionController.ts)
+- [Extension Controller Pattern](../../src/core/extension-controller.ts)
