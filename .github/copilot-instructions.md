@@ -6,13 +6,17 @@ This is a VS Code extension toolkit with a **modular architecture** centered aro
 
 ### Central Controller Pattern
 - `ExtensionController` manages extension lifecycle and disposable cleanup
-- All disposables must be registered via `controller.registerDisposable()`
+- All disposables must be registered via `controller.registerDisposable()` OR `context.subscriptions.push()`
 - Features initialize through setup functions in `src/extension.ts`
 
 ### Dual Platform Support
 - Builds for both Node.js (`out/node/`) and web extensions (`out/web/`)
 - Platform detection via `process.env.PLATFORM` (defined in tsup config)
 - Use `tsup.config.ts` for build configuration with separate node/web targets
+
+### File Naming Convention
+- **CRITICAL**: Use kebab-case for all directories and file names (e.g., `status-bar`, `tree-view`, `extension-controller.ts`)
+- Import paths must match actual file structure exactly
 
 ## Key Development Patterns
 

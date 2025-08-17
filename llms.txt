@@ -9,12 +9,13 @@ This project follows a modular architecture with a central ExtensionController m
 - [README](README.md): Project overview, available commands, and configuration options
 - [Package Manifest](package.json): Extension metadata, dependencies, activation events, and VS Code contribution points
 - [Changelog](CHANGELOG.md): Version history and notable changes
+- [Copilot Instructions](.github/copilot-instructions.md): Guidelines for GitHub Copilot development assistance
 
 ## Core Implementation
 
 - [Extension Entry Point](src/extension.ts): Main activation function and extension lifecycle management
 - [Public API](src/index.ts): Exported modules and utilities for use by other extensions
-- [Extension Controller](src/core/ExtensionController.ts): Central controller managing extension state and cleanup
+- [Extension Controller](src/core/extension-controller.ts): Central controller managing extension state and cleanup
 - [Commands Module](src/commands/index.ts): Command registration and management utilities
 - [Configuration Module](src/configuration/index.ts): Settings and configuration management
 - [Logger Utility](src/utils/logger.ts): Centralized logging functionality
@@ -36,8 +37,8 @@ This project follows a modular architecture with a central ExtensionController m
 ## Optional
 
 - [Generated Metadata](src/generated/meta.ts): Auto-generated types and constants from package.json
-- [Status Bar Module](src/statusBar/index.ts): Status bar integration utilities
-- [Tree View Module](src/treeView/index.ts): Tree view provider utilities
+- [Status Bar Module](src/status-bar/index.ts): Status bar integration utilities
+- [Tree View Module](src/tree-view/index.ts): Tree view provider utilities
 - [Webview Module](src/webview/index.ts): Webview creation and management utilities
 - [Task Provider Module](src/tasks/index.ts): Custom task provider implementation
 - [Telemetry Module](src/telemetry/index.ts): Usage analytics and telemetry collection
