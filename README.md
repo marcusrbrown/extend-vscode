@@ -78,8 +78,8 @@ pnpm test:web      # web (browser) target
 | Activation | `src/extension.ts`    | Orchestrates setup (commands, webview, config, telemetry, status bar, tree, tasks). |
 | Lifecycle  | `ExtensionController` | Centralized state & disposal registration.                                          |
 | Commands   | `src/commands/`       | Typed factory + bulk registration with error logging.                               |
-| Status Bar | `src/statusBar/`      | Manager + fluent item API.                                                          |
-| Tree View  | `src/treeView/`       | Generic base + example hierarchical provider.                                       |
+| Status Bar | `src/status-bar/`     | Manager + fluent item API.                                                          |
+| Tree View  | `src/tree-view/`      | Generic base + example hierarchical provider.                                       |
 | Webview    | `src/webview/`        | Typed panel base + HTML example & message bridge.                                   |
 | Tasks      | `src/tasks/`          | Extensible task provider abstraction + example shell task.                          |
 | Telemetry  | `src/telemetry/`      | Pluggable reporter + common property injection.                                     |
