@@ -1,21 +1,45 @@
+# Development files and directories
 .git/
 .github/
 .vscode/
+.vscode-test/
+.vscode-test-web/
+.ai/
+.cursor/
 node_modules/
 src/
-out/desktop/**/*.map
-out/web/**/*.map
+test/
+coverage/
+types/
+
+# Configuration files
 tsconfig.json
-tsconfig.node.json
 tsup.config.ts
+vitest.config.ts
+vitest.config.web.ts
+eslint.config.ts
 .gitignore
+.gitattributes
 .prettierrc.yaml
 .prettierignore
 .editorconfig
 .npmrc
 .node-version
-vitest.config.ts
-jest.config.js
-**/*.ts
+.markdownlint-cli2.yaml
+pnpm-lock.yaml
+pnpm-workspace.yaml
+
+# Source maps and TypeScript files
 **/*.map
+**/*.ts
+!out/**/*.d.ts
+
+# System files
 **/.DS_Store
+
+# Build artifacts not needed for extension
+*.vsix
+test.vsix
+
+# Development tools
+llms.txt
