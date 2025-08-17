@@ -141,7 +141,8 @@
     "test:integration": "tsx test/run-test.ts",
     "test:web": "vitest run -c vitest.config.web.ts",
     "test:web:watch": "vitest -c vitest.config.web.ts",
-    "test:web:coverage": "vitest run -c vitest.config.web.ts --coverage"
+    "test:web:coverage": "vitest run -c vitest.config.web.ts --coverage",
+    "type-check": "tsc --noEmit"
   },
   "devDependencies": {
     "@bfra.me/eslint-config": "0.26.0",

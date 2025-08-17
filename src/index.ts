@@ -3,11 +3,11 @@ export * from './commands';
 
 export * from './configuration';
 // Export core utilities
-export * from './core/ExtensionController';
-export * from './statusBar';
+export * from './core/extension-controller';
+export * from './status-bar';
 export * from './tasks';
 export * from './telemetry';
-export * from './treeView';
+export * from './tree-view';
 // Export utilities
 export * from './utils/logger';
 
