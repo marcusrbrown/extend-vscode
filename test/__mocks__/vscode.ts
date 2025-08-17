@@ -114,6 +114,25 @@ const createMockVSCode = (): MockVSCode => ({
   } as const,
 });
 
-const vscode = createMockVSCode();
+const mockVscode = createMockVSCode();
 
-export {createMockVSCode, vscode as default};
+// Export both as default and as named exports to support different import styles
+export {createMockVSCode};
+export default mockVscode;
+
+// Support for import * as vscode syntax by re-exporting all properties
+export const version = mockVscode.version;
+export const env = mockVscode.env;
+export const StatusBarAlignment = mockVscode.StatusBarAlignment;
+export const ThemeColor = mockVscode.ThemeColor;
+export const window = mockVscode.window;
+export const workspace = mockVscode.workspace;
+export const commands = mockVscode.commands;
+export const languages = mockVscode.languages;
+export const ExtensionContext = mockVscode.ExtensionContext;
+export const Uri = mockVscode.Uri;
+export const Position = mockVscode.Position;
+export const Range = mockVscode.Range;
+export const RelativePattern = mockVscode.RelativePattern;
+export const EventEmitter = mockVscode.EventEmitter;
+export const ViewColumn = mockVscode.ViewColumn;

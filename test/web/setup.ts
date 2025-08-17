@@ -4,8 +4,8 @@ import {createMockVSCode} from '../__mocks__/vscode';
 // Create a fresh mock for each test
 const mockVscode = createMockVSCode();
 
-// Mock the VS Code API
-vi.mock('vscode', () => mockVscode);
+// Note: vscode module resolution is handled by vitest config alias
+// No need for vi.mock here since the alias points directly to the mock file
 
 // Mock browser-specific globals
 const mockAcquireVsCodeApi = vi.fn(() => ({
@@ -35,6 +35,7 @@ if (typeof globalThis === 'object' && globalThis !== null) {
 export const resetAllMocks = () => {
   vi.clearAllMocks();
   mockAcquireVsCodeApi.mockClear();
+  // Reset specific mock functions that need individual reset
   Object.values(mockVscode).forEach((value) => {
     if (typeof value === 'object' && value !== null) {
       Object.values(value as Record<string, unknown>).forEach((fn) => {
