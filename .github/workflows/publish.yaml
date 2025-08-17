@@ -1,0 +1,230 @@
+name: Publish
+
+on:
+  push:
+    tags:
+      - 'v*.*.*'
+  workflow_dispatch:
+    inputs:
+      version:
+        description: Version to publish (e.g., 1.0.0)
+        required: false
+        type: string
+      dry_run:
+        description: Run in dry-run mode (no actual publishing)
+        required: false
+        default: false
+        type: boolean
+      targets:
+        description: Publishing targets
+        required: false
+        default: all
+        type: choice
+        options:
+          - all
+          - vscode
+          - openvsx
+          - npm
+
+concurrency:
+  group: publish-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION_FILE: .node-version
+  REGISTRY_URL: https://registry.npmjs.org
+
+jobs:
+  validate-secrets:
+    name: Validate Secrets
+    runs-on: ubuntu-latest
+    outputs:
+      has-vsce-token: ${{ steps.check-secrets.outputs.has-vsce-token }}
+      has-ovsx-token: ${{ steps.check-secrets.outputs.has-ovsx-token }}
+      has-npm-token: ${{ steps.check-secrets.outputs.has-npm-token }}
+    steps:
+      - name: Check required secrets
+        id: check-secrets
+        env:
+          VSCE_TOKEN: ${{ secrets.VSCE_TOKEN }}
+          OVSX_TOKEN: ${{ secrets.OVSX_TOKEN }}
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: |
+          echo "has-vsce-token=$([[ -n $VSCE_TOKEN ]] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "has-ovsx-token=$([[ -n $OVSX_TOKEN ]] && echo true || echo false)" >> $GITHUB_OUTPUT
+          echo "has-npm-token=$([[ -n $NPM_TOKEN ]] && echo true || echo false)" >> $GITHUB_OUTPUT
+
+          # Log secret availability for debugging
+          echo "VSCE_TOKEN available: $([[ -n $VSCE_TOKEN ]] && echo true || echo false)"
+          echo "OVSX_TOKEN available: $([[ -n $OVSX_TOKEN ]] && echo true || echo false)"
+          echo "NPM_TOKEN available: $([[ -n $NPM_TOKEN ]] && echo true || echo false)"
+
+          # Fail fast if no tokens are available
+          if [[ -z $VSCE_TOKEN && -z $OVSX_TOKEN && -z $NPM_TOKEN ]]; then
+            echo "::error::No publishing tokens available. Please configure VSCE_TOKEN, OVSX_TOKEN, or NPM_TOKEN secrets."
+            exit 1
+          fi
+
+  validate-version:
+    name: Validate Version
+    runs-on: ubuntu-latest
+    needs: validate-secrets
+    outputs:
+      version: ${{ steps.version.outputs.version }}
+      is-prerelease: ${{ steps.version.outputs.is-prerelease }}
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+        with:
+          fetch-depth: 0
+
+      - name: Determine version
+        id: version
+        run: |
+          if [[ "${{ github.event_name }}" == "workflow_dispatch" && "${{ github.event.inputs.version }}" != "" ]]; then
+            VERSION="${{ github.event.inputs.version }}"
+          elif [[ "${{ github.ref_type }}" == "tag" ]]; then
+            VERSION="${GITHUB_REF#refs/tags/v}"
+          else
+            echo "::error::Unable to determine version. Please provide version input or push a tag."
+            exit 1
+          fi
+
+          # Validate semantic version format
+          if ! [[ "$VERSION" =~ ^[0-9]+\.[0-9]+\.[0-9]+(-[a-zA-Z0-9.-]+)?(\+[a-zA-Z0-9.-]+)?$ ]]; then
+            echo "::error::Invalid semantic version format: $VERSION"
+            exit 1
+          fi
+
+          # Check if this is a prerelease
+          IS_PRERELEASE=false
+          if [[ "$VERSION" =~ -[a-zA-Z0-9.-]+ ]]; then
+            IS_PRERELEASE=true
+          fi
+
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "is-prerelease=$IS_PRERELEASE" >> $GITHUB_OUTPUT
+          echo "Publishing version: $VERSION (prerelease: $IS_PRERELEASE)"
+
+  pre-release-validation:
+    name: Pre-Release Validation
+    runs-on: ubuntu-latest
+    needs: [validate-secrets, validate-version]
+    strategy:
+      fail-fast: true
+      matrix:
+        validation: [lint, test, test-web, build]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          cache: pnpm
+          node-version-file: ${{ env.NODE_VERSION_FILE }}
+
+      - name: Install dependencies
+        run: pnpm bootstrap
+
+      - name: Run lint
+        if: matrix.validation == 'lint'
+        run: pnpm lint
+
+      - name: Run tests
+        if: matrix.validation == 'test'
+        run: pnpm test
+
+      - name: Run web tests
+        if: matrix.validation == 'test-web'
+        run: pnpm test:web
+
+      - name: Build
+        if: matrix.validation == 'build'
+        run: pnpm build
+
+      - name: Upload build artifacts
+        if: matrix.validation == 'build'
+        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        with:
+          name: build-artifacts
+          path: |
+            out/
+            package.json
+            README.md
+            LICENSE.md
+            CHANGELOG.md
+          retention-days: 7
+
+  collect-artifacts:
+    name: Collect Release Artifacts
+    runs-on: ubuntu-latest
+    needs: [validate-secrets, validate-version, pre-release-validation]
+    steps:
+      - name: Checkout
+        uses: actions/checkout@08eba0b27e820071cde6df949e0beb9ba4906955 # v4.3.0
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@a7487c7e89a18df4991f7f222e4898a00d66ddda # v4.1.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4.4.0
+        with:
+          cache: pnpm
+          node-version-file: ${{ env.NODE_VERSION_FILE }}
+
+      - name: Install dependencies
+        run: pnpm bootstrap
+
+      - name: Build for publishing
+        run: pnpm build
+
+      - name: Generate changelog
+        id: changelog
+        run: |
+          # For now, use a simple git log for changelog generation
+          # This will be enhanced in later phases with proper changelog tools
+          echo "## Release ${{ needs.validate-version.outputs.version }}" > RELEASE_NOTES.md
+          echo "" >> RELEASE_NOTES.md
+          if [[ "${{ github.ref_type }}" == "tag" ]]; then
+            git log --pretty=format:"- %s (%h)" --no-merges "$(git describe --tags --abbrev=0 HEAD^)..HEAD" >> RELEASE_NOTES.md 2>/dev/null || echo "- Initial release" >> RELEASE_NOTES.md
+          else
+            echo "- Manual release from ${{ github.sha }}" >> RELEASE_NOTES.md
+          fi
+
+          # Store changelog content for later use
+          echo "changelog<<EOF" >> $GITHUB_OUTPUT
+          cat RELEASE_NOTES.md >> $GITHUB_OUTPUT
+          echo "EOF" >> $GITHUB_OUTPUT
+
+      - name: Upload release artifacts
+        uses: actions/upload-artifact@50769540e7f4bd5e21e526ee35c689e35e0d6874 # v4.4.0
+        with:
+          name: release-artifacts-${{ needs.validate-version.outputs.version }}
+          path: |
+            out/
+            package.json
+            README.md
+            LICENSE.md
+            CHANGELOG.md
+            RELEASE_NOTES.md
+          retention-days: 30
+
+      - name: Display publishing plan
+        run: |
+          echo "## Publishing Plan"
+          echo "Version: ${{ needs.validate-version.outputs.version }}"
+          echo "Is prerelease: ${{ needs.validate-version.outputs.is-prerelease }}"
+          echo "Dry run: ${{ github.event.inputs.dry_run || 'false' }}"
+          echo "Targets: ${{ github.event.inputs.targets || 'all' }}"
+          echo ""
+          echo "### Available tokens:"
+          echo "- VSCE_TOKEN: ${{ needs.validate-secrets.outputs.has-vsce-token }}"
+          echo "- OVSX_TOKEN: ${{ needs.validate-secrets.outputs.has-ovsx-token }}"
+          echo "- NPM_TOKEN: ${{ needs.validate-secrets.outputs.has-npm-token }}"
+          echo ""
+          echo "### Release notes:"
+          cat RELEASE_NOTES.md
