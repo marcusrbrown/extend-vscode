@@ -2,7 +2,7 @@
 goal: Comprehensive Publishing Workflow Infrastructure for VS Code Marketplace, OpenVSIX, and npm
 version: 1.0
 date_created: 2025-08-16
-last_updated: 2025-08-16
+last_updated: 2025-08-17
 owner: Marcus R. Brown
 status: 'Planned'
 tags: [infrastructure, publishing, automation, ci/cd, marketplace, npm]
@@ -114,9 +114,10 @@ This implementation plan establishes a comprehensive publishing workflow infrast
 - **DEP-003**: OpenVSIX CLI (ovsx) for OpenVSIX registry publishing
 - **DEP-004**: npm CLI for package registry publishing
 - **DEP-005**: Semantic versioning tool (semantic-release or conventional-changelog)
-- **DEP-006**: VSCE_TOKEN secret configured in GitHub repository settings
-- **DEP-007**: OVSX_TOKEN secret configured in GitHub repository settings
-- **DEP-008**: NPM_TOKEN secret configured in GitHub repository settings
+- **DEP-006**: tsx for executing TypeScript utility scripts in publishing pipeline
+- **DEP-007**: VSCE_TOKEN secret configured in GitHub repository settings
+- **DEP-008**: OVSX_TOKEN secret configured in GitHub repository settings
+- **DEP-009**: NPM_TOKEN secret configured in GitHub repository settings
 
 ## 5. Files
 
@@ -125,9 +126,9 @@ This implementation plan establishes a comprehensive publishing workflow infrast
 - **FILE-003**: `.vscodeignore` - Extension packaging exclusion rules for marketplace
 - **FILE-004**: `.npmignore` - npm publishing exclusion rules for library consumption
 - **FILE-005**: `CHANGELOG.md` - Automated changelog generation and version history
-- **FILE-006**: `scripts/publish-utils.js` - Utility functions for publishing process validation
-- **FILE-007**: `scripts/validate-tokens.js` - Token validation and authentication checking
-- **FILE-008**: `.releaserc.json` - Semantic release configuration for automated versioning
+- **FILE-006**: `scripts/publish-utils.ts` - TypeScript utility functions for publishing process validation
+- **FILE-007**: `scripts/validate-tokens.ts` - TypeScript token validation and authentication checking
+- **FILE-008**: `release.config.mjs` - Semantic release configuration for automated versioning
 
 ## 6. Testing
 
@@ -136,7 +137,7 @@ This implementation plan establishes a comprehensive publishing workflow infrast
 - **TEST-003**: Validate extension packaging with proper file inclusion/exclusion
 - **TEST-004**: Test npm package structure and import paths for library consumers
 - **TEST-005**: Verify semantic versioning and changelog generation accuracy
-- **TEST-006**: Test token validation and error handling for missing credentials
+- **TEST-006**: Test TypeScript utility script execution via tsx and error handling for missing credentials
 - **TEST-007**: Validate dual Node/Web build artifacts in publishing pipeline
 - **TEST-008**: Integration test of complete publishing workflow in staging environment
 
