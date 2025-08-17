@@ -108,27 +108,27 @@ jobs:
         if: matrix.validation == 'bundle-size'
         run: |
           pnpm build
-          tsx scripts/publish-utils.ts --bundle-size-only
+          pnpm exec tsx scripts/publish-utils.ts --bundle-size-only
 
       - name: Validate manifest
         if: matrix.validation == 'manifest'
-        run: tsx scripts/publish-utils.ts --manifest-only
+        run: pnpm exec tsx scripts/publish-utils.ts --manifest-only
 
       - name: Validate dual-target build
         if: matrix.validation == 'dual-target'
         run: |
           pnpm build
-          tsx scripts/publish-utils.ts --dual-target-only
+          pnpm exec tsx scripts/publish-utils.ts --dual-target-only
 
       - name: Run integration tests
         if: matrix.validation == 'integration'
         run: |
           pnpm build
-          tsx scripts/publish-utils.ts --integration-only
+          pnpm exec tsx scripts/publish-utils.ts --integration-only
 
       - name: Scan vulnerabilities
         if: matrix.validation == 'vulnerabilities'
-        run: tsx scripts/publish-utils.ts --vulnerabilities-only
+        run: pnpm exec tsx scripts/publish-utils.ts --vulnerabilities-only
 
       - name: Upload build artifacts
         if: matrix.validation == 'build'
