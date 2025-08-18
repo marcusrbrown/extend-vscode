@@ -11,6 +11,7 @@ src/
 test/
 coverage/
 types/
+test-results/
 
 # Configuration files
 tsconfig.json
