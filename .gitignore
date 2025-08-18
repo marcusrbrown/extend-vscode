@@ -5,3 +5,4 @@ node_modules
 .vscode-test-web/
 coverage/
 src/generated/
+test-results/
