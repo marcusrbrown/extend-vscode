@@ -15,7 +15,7 @@
     "url": "https://github.com/marcusrbrown/extend-vscode/issues"
   },
   "homepage": "https://github.com/marcusrbrown/extend-vscode#readme",
-  "packageManager": "pnpm@10.14.0",
+  "packageManager": "pnpm@10.15.0",
   "files": [
     "out/",
     "LICENSE.md",
