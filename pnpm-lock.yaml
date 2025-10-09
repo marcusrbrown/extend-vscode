@@ -22,8 +22,8 @@ importers:
         specifier: 0.12.0
         version: 0.12.0
       '@playwright/test':
-        specifier: 1.55.0
-        version: 1.55.0
+        specifier: 1.56.0
+        version: 1.56.0
       '@semantic-release/changelog':
         specifier: 6.0.3
         version: 6.0.3(semantic-release@24.2.7(typescript@5.8.3))
@@ -724,8 +724,8 @@ packages:
     resolution: {integrity: sha512-xsujbzJAgn3A0RVV00cT/XekdPUOqsJoy8WWyKdqhQnuA7A88m/x0MnbcaCeZcs2M5JVRqpbsFKRos+IIeZLjw==}
     engines: {node: '>=18'}
 
-  '@playwright/test@1.55.0':
-    resolution: {integrity: sha512-04IXzPwHrW69XusN/SIdDdKZBzMfOT9UNT/YiJit/xpy2VuAoB8NHc8Aplb96zsWDddLnbkPL3TsmrS04ZU2xQ==}
+  '@playwright/test@1.56.0':
+    resolution: {integrity: sha512-Tzh95Twig7hUwwNe381/K3PggZBZblKUe2wv25oIpzWLr6Z0m4KgV1ZVIjnR6GM9ANEqjZD7XsZEa6JL/7YEgg==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -3915,13 +3915,13 @@ packages:
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright-core@1.55.0:
-    resolution: {integrity: sha512-GvZs4vU3U5ro2nZpeiwyb0zuFaqb9sUiAJuyrWpcGouD8y9/HLgGbNRjIph7zU9D3hnPaisMl9zG9CgFi/biIg==}
+  playwright-core@1.56.0:
+    resolution: {integrity: sha512-1SXl7pMfemAMSDn5rkPeZljxOCYAmQnYLBTExuh6E8USHXGSX3dx6lYZN/xPpTz1vimXmPA9CDnILvmJaB8aSQ==}
     engines: {node: '>=18'}
     hasBin: true
 
-  playwright@1.55.0:
-    resolution: {integrity: sha512-sdCWStblvV1YU909Xqx0DhOjPZE4/5lJsIS84IfN9dAZfcl/CIZ5O8l3o0j7hPMjDvqoTF8ZUcc+i/GL5erstA==}
+  playwright@1.56.0:
+    resolution: {integrity: sha512-X5Q1b8lOdWIE4KAoHpW3SE8HvUB+ZZsUoN64ZhjnN8dOb1UpujxBtENGiZFE+9F/yhzJwYa+ca3u43FeLbboHA==}
     engines: {node: '>=18'}
     hasBin: true
 
@@ -5577,9 +5577,9 @@ snapshots:
     dependencies:
       playwright-core: 1.53.1
 
-  '@playwright/test@1.55.0':
+  '@playwright/test@1.56.0':
     dependencies:
-      playwright: 1.55.0
+      playwright: 1.56.0
 
   '@pnpm/config.env-replace@1.1.0': {}
 
@@ -6328,7 +6328,7 @@ snapshots:
       koa-mount: 4.2.0
       koa-static: 5.0.0
       minimist: 1.2.8
-      playwright: 1.55.0
+      playwright: 1.56.0
       tar-fs: 3.0.10
       tinyglobby: 0.2.12
       vscode-uri: 3.1.0
@@ -9136,11 +9136,11 @@ snapshots:
 
   playwright-core@1.53.1: {}
 
-  playwright-core@1.55.0: {}
+  playwright-core@1.56.0: {}
 
-  playwright@1.55.0:
+  playwright@1.56.0:
     dependencies:
-      playwright-core: 1.55.0
+      playwright-core: 1.56.0
     optionalDependencies:
       fsevents: 2.3.2
 
