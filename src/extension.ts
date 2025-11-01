@@ -21,15 +21,18 @@ export async function activate(context: vscode.ExtensionContext) {
     await controller.initialize(context);
 
     // Register core functionality
-    await Promise.all([
-      registerCommands(context, commands.webHello),
-      setupWebviewProvider(context),
-      setupConfiguration(context),
-      setupTelemetry(context),
-      setupStatusBar(context),
-      setupTreeView(context),
-      setupTaskProvider(context),
-    ]);
+    {
+      const tasks = [
+        registerCommands(context, commands.webHello),
+        setupWebviewProvider(context),
+        setupConfiguration(context),
+        setupTelemetry(context),
+        setupStatusBar(context),
+        setupTreeView(context),
+        setupTaskProvider(context),
+      ];
+      await Promise.all(tasks.map(async (t) => Promise.resolve(t)));
+    }
 
     logger.info('Extension successfully activated');
   } catch (error) {
