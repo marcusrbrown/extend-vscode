@@ -185,7 +185,7 @@
     "semantic-release-vsce": "6.0.11",
     "tsup": "^8.0.2",
     "tsx": "4.20.0",
-    "type-fest": "4.41.0",
+    "type-fest": "5.1.0",
     "typescript": "5.9.3",
     "typescript-eslint": "8.46.0",
     "vitest": "^3.0.6",
