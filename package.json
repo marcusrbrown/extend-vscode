@@ -66,10 +66,10 @@
   "browser": "./out/web/extension.js",
   "types": "./out/node/index.d.ts",
   "files": [
-    "out/",
+    "CHANGELOG.md",
     "LICENSE.md",
     "README.md",
-    "CHANGELOG.md"
+    "out/"
   ],
   "scripts": {
     "bootstrap": "pnpm install --prefer-offline --loglevel warn",
