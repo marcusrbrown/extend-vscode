@@ -178,7 +178,7 @@
     "eslint-plugin-node-dependencies": "1.2.0",
     "eslint-plugin-prettier": "5.5.0",
     "jiti": "<2.7.0",
-    "jsdom": "26.1.0",
+    "jsdom": "27.0.1",
     "ovsx": "0.10.5",
     "prettier": "3.6.0",
     "semantic-release": "25.0.1",
