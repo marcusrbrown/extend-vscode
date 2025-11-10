@@ -170,7 +170,7 @@
     "@vscode/test-cli": "0.0.10",
     "@vscode/test-electron": "2.5.2",
     "@vscode/test-web": "0.0.67",
-    "@vscode/vsce": "3.6.0",
+    "@vscode/vsce": "3.7.0",
     "esbuild-plugin-polyfill-node": "0.3.0",
     "eslint": "9.39.0",
     "eslint-config-prettier": "10.1.1",
