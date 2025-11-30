@@ -19,8 +19,8 @@ importers:
   .:
     devDependencies:
       '@bfra.me/eslint-config':
-        specifier: 0.45.1
-        version: 0.45.1(@typescript-eslint/eslint-plugin@8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@typescript-eslint/utils@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@vitest/eslint-plugin@1.5.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)(vitest@4.0.6))(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint-plugin-prettier@5.5.0(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint@9.39.0(jiti@2.1.2))(prettier@3.6.0))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)
+        specifier: 0.46.0
+        version: 0.46.0(@typescript-eslint/eslint-plugin@8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@typescript-eslint/utils@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@vitest/eslint-plugin@1.5.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)(vitest@4.0.6))(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint-plugin-prettier@5.5.0(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint@9.39.0(jiti@2.1.2))(prettier@3.6.0))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)
       '@bfra.me/tsconfig':
         specifier: 0.12.0
         version: 0.12.0
@@ -228,8 +228,8 @@ packages:
     resolution: {integrity: sha512-6zABk/ECA/QYSCQ1NGiVwwbQerUCZ+TQbp64Q3AgmfNvurHH0j8TtXa1qbShXA6qqkpAj4V5W8pP6mLe1mcMqA==}
     engines: {node: '>=18'}
 
-  '@bfra.me/eslint-config@0.45.1':
-    resolution: {integrity: sha512-p7WO9HXXUaE06cNDaM2ISG4iCKpxucZWJhXrl+w/uo4cBuI+5D9u+BYucioJaD1gQpNxmoyrm8ZIvPgYs8Edgw==}
+  '@bfra.me/eslint-config@0.46.0':
+    resolution: {integrity: sha512-pGa3nYsFHN+3qOUzlbeYpWivXZ81OcaIici86JXUtZYgRXIRa5ALm0dJZNbjYhjOqSwA/PvXE/WwQBFu21SX5Q==}
     peerDependencies:
       '@eslint-react/eslint-plugin': ^2.0.1
       '@next/eslint-plugin-next': '>=15.5.3'
@@ -5119,7 +5119,7 @@ snapshots:
 
   '@bcoe/v8-coverage@1.0.2': {}
 
-  '@bfra.me/eslint-config@0.45.1(@typescript-eslint/eslint-plugin@8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@typescript-eslint/utils@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@vitest/eslint-plugin@1.5.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)(vitest@4.0.6))(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint-plugin-prettier@5.5.0(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint@9.39.0(jiti@2.1.2))(prettier@3.6.0))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)':
+  '@bfra.me/eslint-config@0.46.0(@typescript-eslint/eslint-plugin@8.48.0(@typescript-eslint/parser@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@typescript-eslint/utils@8.48.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3))(@vitest/eslint-plugin@1.5.0(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)(vitest@4.0.6))(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint-plugin-prettier@5.5.0(eslint-config-prettier@10.1.1(eslint@9.39.0(jiti@2.1.2)))(eslint@9.39.0(jiti@2.1.2))(prettier@3.6.0))(eslint@9.39.0(jiti@2.1.2))(typescript@5.9.3)':
     dependencies:
       '@eslint-community/eslint-plugin-eslint-comments': 4.5.0(eslint@9.39.0(jiti@2.1.2))
       '@eslint/markdown': 7.5.1
