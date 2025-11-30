@@ -22,9 +22,9 @@ export interface TreeItemData {
 /**
  * Base tree data provider that can be extended for custom tree views
  */
-export abstract class TreeDataProvider<T extends TreeItemData>
-  implements vscode.TreeDataProvider<T>
-{
+export abstract class TreeDataProvider<
+  T extends TreeItemData,
+> implements vscode.TreeDataProvider<T> {
   readonly onDidChangeTreeData: vscode.Event<T | undefined>;
   private readonly _onDidChangeTreeData = new vscode.EventEmitter<
     T | undefined
