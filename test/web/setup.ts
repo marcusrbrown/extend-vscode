@@ -1,54 +1,60 @@
+import type {Mock} from 'vitest';
 import {vi} from 'vitest';
 import {createMockVSCode} from '../__mocks__/vscode';
 
-// Create a fresh mock for each test
+interface VsCodeApi {
+  postMessage: Mock;
+  setState: Mock;
+  getState: Mock;
+}
+
+interface MockWorkerInterface {
+  onmessage: ((event: MessageEvent) => void) | null;
+  postMessage: Mock;
+  terminate: Mock;
+}
+
 const mockVscode = createMockVSCode();
 
-// Note: vscode module resolution is handled by vitest config alias
-// No need for vi.mock here since the alias points directly to the mock file
-
-// Mock browser-specific globals
-const mockAcquireVsCodeApi = vi.fn(() => ({
+const mockAcquireVsCodeApi: Mock<() => VsCodeApi> = vi.fn(() => ({
   postMessage: vi.fn(),
   setState: vi.fn(),
   getState: vi.fn(),
 }));
 
-// Add to global scope
-if (typeof globalThis === 'object' && globalThis !== null) {
-  (globalThis as Record<string, unknown>).acquireVsCodeApi =
-    mockAcquireVsCodeApi;
+function createMockWorker(): MockWorkerInterface {
+  return {
+    onmessage: null,
+    postMessage: vi.fn(),
+    terminate: vi.fn(),
+  };
 }
 
-// Mock WebWorker
-class MockWorker {
-  onmessage: ((event: MessageEvent) => void) | null = null;
-  postMessage = vi.fn();
-  terminate = vi.fn();
+const MockWorker = vi.fn(createMockWorker);
+
+(globalThis as Record<string, unknown>).acquireVsCodeApi = mockAcquireVsCodeApi;
+(globalThis as Record<string, unknown>).Worker = MockWorker;
+
+function isMockFunction(fn: unknown): fn is {mockReset: () => void} {
+  return (
+    typeof fn === 'function' &&
+    'mockReset' in fn &&
+    typeof fn.mockReset === 'function'
+  );
 }
 
-if (typeof globalThis === 'object' && globalThis !== null) {
-  (globalThis as Record<string, unknown>).Worker = MockWorker;
-}
-
-// Helper to reset all mocks between tests
-export const resetAllMocks = () => {
+export function resetAllMocks(): void {
   vi.clearAllMocks();
-  mockAcquireVsCodeApi.mockClear();
-  // Reset specific mock functions that need individual reset
-  Object.values(mockVscode).forEach((value) => {
-    if (typeof value === 'object' && value !== null) {
-      Object.values(value as Record<string, unknown>).forEach((fn) => {
-        if (
-          typeof fn === 'function' &&
-          'mockReset' in fn &&
-          typeof fn.mockReset === 'function'
-        ) {
-          (fn.mockReset as () => void)();
+
+  for (const value of Object.values(mockVscode)) {
+    if (typeof value === 'object' && value != null) {
+      for (const fn of Object.values(value as Record<string, unknown>)) {
+        if (isMockFunction(fn)) {
+          fn.mockReset();
         }
-      });
+      }
     }
-  });
-};
+  }
+}
 
 export {mockAcquireVsCodeApi, mockVscode};
