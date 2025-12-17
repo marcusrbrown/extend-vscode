@@ -187,7 +187,7 @@
     "typescript": "5.9.3",
     "typescript-eslint": "8.49.0",
     "vitest": "4.0.6",
-    "vscode-ext-gen": "1.4.0"
+    "vscode-ext-gen": "1.5.1"
   },
   "packageManager": "pnpm@10.25.0",
   "engines": {
