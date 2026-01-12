@@ -189,7 +189,7 @@
     "vitest": "4.0.6",
     "vscode-ext-gen": "1.5.1"
   },
-  "packageManager": "pnpm@10.27.0",
+  "packageManager": "pnpm@10.28.0",
   "engines": {
     "vscode": "^1.102.0"
   }
