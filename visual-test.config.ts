@@ -1,6 +1,5 @@
 import type {PlaywrightTestConfig} from '@playwright/test';
 import path from 'node:path';
-
 import process from 'node:process';
 import {devices} from '@playwright/test';
 
