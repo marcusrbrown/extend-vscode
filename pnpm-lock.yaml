@@ -94,8 +94,8 @@ importers:
         specifier: 25.0.1
         version: 25.0.1(typescript@5.9.3)
       semantic-release-vsce:
-        specifier: 6.0.11
-        version: 6.0.11(semantic-release@25.0.1(typescript@5.9.3))
+        specifier: 6.1.0
+        version: 6.1.0(semantic-release@25.0.1(typescript@5.9.3))
       tsup:
         specifier: ^8.0.2
         version: 8.5.1(jiti@2.6.1)(postcss@8.5.6)(tsx@4.21.0)(typescript@5.9.3)(yaml@2.8.2)
@@ -4135,8 +4135,8 @@ packages:
     engines: {node: '>=20.0.0'}
     hasBin: true
 
-  semantic-release-vsce@6.0.11:
-    resolution: {integrity: sha512-1u7xq8X0FlaEprHtTK2Mv19Ob1ffEhNxJ8lDTTaN5atWv18ZPWUlFd1B0n56Y6lThJ5VUtGHZFjy9Lfy06l/1A==}
+  semantic-release-vsce@6.1.0:
+    resolution: {integrity: sha512-op8u5H19EXQvVwQwMqsGCULMvc2VShpbB1WMWcOJjUaQT8UOi6XChSz8akEG8503ZRGQ/aal6fe1t2bpPHmLfw==}
     engines: {node: ^20.8.1 || >=22.0.0}
     peerDependencies:
       semantic-release: '>=20'
@@ -9321,11 +9321,10 @@ snapshots:
     transitivePeerDependencies:
       - supports-color
 
-  semantic-release-vsce@6.0.11(semantic-release@25.0.1(typescript@5.9.3)):
+  semantic-release-vsce@6.1.0(semantic-release@25.0.1(typescript@5.9.3)):
     dependencies:
       '@semantic-release/error': 4.0.0
       '@vscode/vsce': 3.7.0
-      execa: 9.6.1
       fs-extra: 11.3.3
       glob: 13.0.0
       ovsx: 0.10.5
