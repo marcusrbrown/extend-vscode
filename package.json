@@ -155,8 +155,8 @@
     "onStartupFinished"
   ],
   "devDependencies": {
-    "@bfra.me/eslint-config": "0.50.0",
-    "@bfra.me/tsconfig": "0.12.0",
+    "@bfra.me/eslint-config": "0.51.0",
+    "@bfra.me/tsconfig": "0.13.0",
     "@playwright/test": "1.59.0",
     "@semantic-release/changelog": "6.0.3",
     "@semantic-release/git": "10.0.1",
