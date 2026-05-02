@@ -172,7 +172,7 @@
     "esbuild-plugin-polyfill-node": "0.3.0",
     "eslint": "10.2.1",
     "eslint-config-prettier": "10.1.1",
-    "eslint-plugin-no-only-tests": "3.3.0",
+    "eslint-plugin-no-only-tests": "3.4.0",
     "eslint-plugin-node-dependencies": "2.2.0",
     "eslint-plugin-prettier": "5.5.0",
     "jiti": "2.6.1",
