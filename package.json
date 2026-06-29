@@ -170,7 +170,7 @@
     "@vscode/test-web": "0.0.67",
     "@vscode/vsce": "3.9.0",
     "esbuild-plugin-polyfill-node": "0.3.0",
-    "eslint": "10.5.0",
+    "eslint": "10.6.0",
     "eslint-config-prettier": "10.1.1",
     "eslint-plugin-no-only-tests": "3.4.0",
     "eslint-plugin-node-dependencies": "2.2.0",
