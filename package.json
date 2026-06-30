@@ -178,7 +178,7 @@
     "jiti": "2.7.0",
     "jsdom": "29.1.0",
     "ovsx": "0.10.5",
-    "prettier": "3.8.0",
+    "prettier": "3.9.0",
     "semantic-release": "25.0.1",
     "semantic-release-vsce": "6.1.0",
     "tsup": "8.5.1",

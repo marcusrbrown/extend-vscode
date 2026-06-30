@@ -448,19 +448,11 @@ export class PerformanceRegressionDetector {
       if (
         severities.includes(
           severityOrder[i] as
-            | 'none'
-            | 'minor'
-            | 'moderate'
-            | 'major'
-            | 'critical',
+            'none' | 'minor' | 'moderate' | 'major' | 'critical',
         )
       ) {
         return severityOrder[i] as
-          | 'none'
-          | 'minor'
-          | 'moderate'
-          | 'major'
-          | 'critical';
+          'none' | 'minor' | 'moderate' | 'major' | 'critical';
       }
     }
 
